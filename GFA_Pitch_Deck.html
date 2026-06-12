@@ -26,6 +26,7 @@
   --paper:#F1EEE6;
   --paper-2:#E7E4DA;
   --cobalt:#1B2BFF;
+  --flare:#FF4326;
   --ld:rgba(241,238,230,.16);
   --ll:rgba(11,11,15,.14);
   --md:rgba(241,238,230,.66);
@@ -219,7 +220,7 @@ S.push(`
   <div class="pad">
     <div class="khead"><span class="kicker">01 — Contesto</span><span class="kmeta">Il punto di partenza</span></div>
     <h1 class="title t-md" style="max-width:80%">La moda digitale è già un mercato.<br>Le manca <span class="accent">un'industria.</span></h1>
-    <p class="sublede">Dentro i videogiochi si spendono oltre 40 miliardi di dollari l'anno in skin e abbigliamento virtuale. I brand ci sono già, i creator producono già. Quello che non esiste è la struttura che li metta in relazione.</p>
+    <p class="sublede">Dentro i videogiochi si spendono oltre $40 miliardi l'anno in skin e abbigliamento virtuale — più dell'intero mercato luxury accessories. I brand ci sono già, i creator producono già. Quello che non esiste è la struttura che li metta in relazione, li qualifichi e li porti sul mercato.</p>
     <div class="rows" style="margin-top:1.8vw">
       <div class="rrow"><div class="rn">01</div><div class="rh">I brand ci sono già<span class="rsub">La domanda</span></div><div class="rb">Balenciaga × Fortnite, Gucci × Roblox, Louis Vuitton × League of Legends: il lusso ha scelto il gaming come canale verso la Gen Z. Ma ogni operazione nasce come esperimento isolato, senza un interlocutore di settore.</div></div>
       <div class="rrow"><div class="rn">02</div><div class="rh">Il talento c'è già<span class="rsub">L'offerta</span></div><div class="rb">Migliaia di designer 3D creano abiti digitali con strumenti professionali. Nessuna istituzione li riconosce, li seleziona o li porta sul mercato: il talento resta invisibile ai brand che lo cercano.</div></div>
@@ -235,8 +236,8 @@ S.push(`
 <section class="slide s-paper">
   <div class="pad">
     <div class="khead"><span class="kicker">01 — Contesto</span><span class="kmeta">La convergenza</span></div>
-    <h1 class="title t-md" style="max-width:78%">Tre industrie, <span class="accent">una traiettoria.</span></h1>
-    <p class="sublede">Moda digitale, gaming e creator economy stanno convergendo sullo stesso punto: l'identità digitale delle persone. È un mercato nuovo, che nessuno dei tre mondi può presidiare da solo.</p>
+    <h1 class="title t-md" style="max-width:80%">Tre industrie, <span class="accent">una traiettoria.</span></h1>
+    <p class="sublede">Moda digitale, gaming e creator economy stanno convergendo sullo stesso punto: l'identità digitale delle persone. Un mercato stimato in crescita del 25% annuo — che nessuno dei tre mondi può presidiare da solo.</p>
     <div style="position:relative;flex:1;display:flex;align-items:center;justify-content:center"><div id="convDiagram"></div></div>
     <p class="close">L'intersezione cresce da anni. <span class="accent">Nessun player la presidia in modo strutturato.</span></p>
   </div>
@@ -248,8 +249,8 @@ S.push(`
 <section class="slide s-paper">
   <div class="pad" style="justify-content:center">
     <span class="kicker" style="margin-bottom:1.6vw">01 — Contesto · La tesi</span>
-    <h1 class="title t-lg" style="max-width:82%">Non un premio.<br>L'infrastruttura <span class="accent">di un settore.</span></h1>
-    <p class="sublede" style="font-size:1.25vw;max-width:58ch;margin-top:1.6vw">GFA usa il formato award per accendere il mercato — è il modo più rapido per creare attenzione e autorevolezza — ma è costruita come piattaforma. Ogni edizione produce tre asset che restano: copertura media, creator qualificati nel network, inventory commerciale per i brand.</p>
+    <h1 class="title t-md" style="max-width:80%">Non un premio.<br>L'infrastruttura <span class="accent">di un settore.</span></h1>
+    <p class="sublede" style="max-width:58ch;margin-top:1.2vw">GFA usa il formato award per accendere il mercato — è il modo più rapido per creare attenzione e autorevolezza — ma è costruita come piattaforma. Ogni edizione produce tre asset che restano: copertura media, creator qualificati nel network, inventory commerciale per i brand.</p>
     <p class="mono" style="margin-top:2vw;font-size:.95vw;letter-spacing:.2em;text-transform:uppercase;color:var(--cobalt)">Built as platform · Powered by attention</p>
   </div>
   ${foot()}
@@ -323,10 +324,10 @@ S.push(`
     <h1 class="title t-md" style="margin-bottom:.6vw">Un MVP focalizzato, <span class="accent">su componenti solidi.</span></h1>
     <p class="sublede" style="margin-bottom:1.8vw">Niente ricerca, niente tecnologia da inventare: il prodotto assembla componenti maturi di settore. Il pre-seed compra esecuzione verificabile, non scommesse tecnologiche.</p>
     <div class="mgrid" style="grid-template-columns:repeat(2,1fr)">
-      <div class="mod" style="min-height:7.5vw"><div class="mi">${icon('cloud')}</div><div class="mt">Web platform cloud-native</div><div class="mb">Applicazione web con profili, back-office giuria e CMS editoriale. Architettura cloud a costi variabili: scala con le edizioni, non pesa sul piano.</div></div>
-      <div class="mod" style="min-height:7.5vw"><div class="mi">${icon('cube')}</div><div class="mt">Pipeline 3D standard</div><div class="mb">Ingestione e validazione degli asset nei formati aperti di settore (glTF), con anteprima e rendering direttamente nel browser.</div></div>
-      <div class="mod" style="min-height:7.5vw"><div class="mi">${icon('play')}</div><div class="mt">Runway come contenuto</div><div class="mb">Il viewer 3D produce anche i formati video per social e media engine: ogni asset caricato è contenuto pronto alla distribuzione.</div></div>
-      <div class="mod" style="min-height:7.5vw"><div class="mi">${icon('shield')}</div><div class="mt">Voting &amp; integrity</div><div class="mb">Meccaniche di voto con controlli anti-frode e ponderazione con la giuria tecnica: la credibilità della selezione è un asset, va protetta.</div></div>
+      <div class="mod" style="min-height:7.5vw"><div class="mi">${icon('cloud')}</div><div class="mt">Web platform cloud-native</div><div class="mb">Frontend React/Next.js, backend serverless, database PostgreSQL. Architettura su AWS/Vercel a costi variabili: scala con le edizioni, non pesa sul piano.</div></div>
+      <div class="mod" style="min-height:7.5vw"><div class="mi">${icon('cube')}</div><div class="mt">Pipeline 3D standard</div><div class="mb">Ingestione e validazione degli asset in formato glTF/GLB, rendering via Three.js nel browser. Nessun plugin, nessun download: l'asset è immediatamente visualizzabile.</div></div>
+      <div class="mod" style="min-height:7.5vw"><div class="mi">${icon('play')}</div><div class="mt">Runway come contenuto</div><div class="mb">Il viewer 3D genera automaticamente clip video per social e media engine. Ogni asset caricato diventa contenuto distribuibile — senza post-produzione.</div></div>
+      <div class="mod" style="min-height:7.5vw"><div class="mi">${icon('shield')}</div><div class="mt">Voting &amp; integrity</div><div class="mb">Rate limiting, fingerprinting e verifica email per il voto community; ponderazione algoritmica con la giuria tecnica. La credibilità della selezione è un asset, va protetta.</div></div>
     </div>
     <div class="layer" style="margin-top:1vw"><span class="lbar"></span><span class="lnum">Roadmap</span><span class="lh" style="flex:0 0 12vw">MVP · Q1 2027</span><span class="lb">Sviluppo con fornitori esterni dedicati, milestone trimestrali, primo modulo in produzione: onboarding e asset hub.</span></div>
   </div>
@@ -338,7 +339,7 @@ S.push(`
 <section class="slide s-paper">
   <div class="pad">
     <div class="khead"><span class="kicker">02 — Prodotto</span><span class="kmeta">La creator pipeline</span></div>
-    <h1 class="title t-md" style="max-width:74%;margin-bottom:.6vw">Il primo asset che si accumula: <span class="accent">la creator pipeline.</span></h1>
+    <h1 class="title t-md" style="max-width:80%;margin-bottom:.6vw">Il primo asset che si accumula: <span class="accent">la creator pipeline.</span></h1>
     <p class="sublede" style="margin-bottom:1vw">L'award non consuma i creator che attrae: li trattiene. Edizione dopo edizione, il funnel trasforma candidature in un roster proprietario di talento verificato.</p>
     <div style="display:flex;gap:3.5vw;align-items:center;flex:1">
       <div id="funnel" style="flex:0 0 21%;max-height:100%"></div>
@@ -358,7 +359,7 @@ S.push(`
 <section class="slide s-paper">
   <div class="pad">
     <div class="khead"><span class="kicker">02 — Prodotto</span><span class="kmeta">Rights &amp; asset layer</span></div>
-    <h1 class="title t-md" style="max-width:76%;margin-bottom:.6vw">Gli asset digitali: <span class="accent">il ricavo che matura nel tempo.</span></h1>
+    <h1 class="title t-md" style="max-width:80%;margin-bottom:.6vw">Gli asset digitali: <span class="accent">il ricavo che matura nel tempo.</span></h1>
     <p class="sublede" style="margin-bottom:1.6vw">Ogni edizione produce un archivio di abiti digitali premiati e validati. GFA ne organizza la distribuzione commerciale — con un modello da label, non da marketplace.</p>
     <div style="display:flex;gap:3.5vw;align-items:flex-start;flex:1">
       <div class="rows" style="flex:1">
@@ -382,18 +383,18 @@ S.push(`
 <section class="slide s-paper">
   <div class="pad">
     <div class="khead"><span class="kicker">03 — Mercato</span><span class="kmeta">Dimensione</span></div>
-    <h1 class="title t-md" style="max-width:80%;margin-bottom:.4vw">Un mercato grande, misurabile, <span class="accent">senza presidio.</span></h1>
+    <h1 class="title t-md" style="max-width:80%;margin-bottom:.6vw">Un mercato grande, misurabile, <span class="accent">senza presidio.</span></h1>
     <div style="display:flex;align-items:center;gap:4vw;flex:1">
       <div id="tamring" style="position:relative;width:21vw;height:21vw;flex:0 0 auto"></div>
       <div style="flex:1;display:flex;flex-direction:column;gap:1.4vw;max-width:54%">
-        <div><div class="mono" style="font-size:.8vw;letter-spacing:.18em;color:var(--cobalt);text-transform:uppercase;font-weight:700">TAM — Il gaming globale</div><div class="body" style="margin-top:.3vw"><strong>~$190 miliardi di mercato annuo</strong> e oltre 3 miliardi di giocatori: la più grande piattaforma culturale del pianeta, dove la Gen Z passa il proprio tempo.</div></div>
-        <div><div class="mono" style="font-size:.8vw;letter-spacing:.18em;color:var(--cobalt);text-transform:uppercase;font-weight:700">SAM — La moda dentro il gaming</div><div class="body" style="margin-top:.3vw"><strong>$40+ miliardi l'anno</strong> in skin e cosmetici in-game: è già oggi il più grande mercato di moda digitale esistente — e non ha né istituzioni né infrastruttura.</div></div>
-        <div><div class="mono" style="font-size:.8vw;letter-spacing:.18em;color:var(--cobalt);text-transform:uppercase;font-weight:700">SOM — Il piano 3Y</div><div class="body" style="margin-top:.3vw"><strong>€1,0M di ricavi al terzo anno</strong>: una quota deliberatamente conservativa, costruita su sponsorship e partnership — non su ipotesi di consumo.</div></div>
+        <div><div class="mono" style="font-size:.8vw;letter-spacing:.18em;color:var(--cobalt);text-transform:uppercase;font-weight:700">TAM — Il gaming globale</div><div class="body" style="margin-top:.3vw"><strong>~$190 miliardi di mercato annuo</strong> (Newzoo 2025) e oltre 3,4 miliardi di giocatori attivi. La più grande piattaforma culturale del pianeta — il 90% della Gen Z gioca regolarmente.</div></div>
+        <div><div class="mono" style="font-size:.8vw;letter-spacing:.18em;color:var(--cobalt);text-transform:uppercase;font-weight:700">SAM — La moda dentro il gaming</div><div class="body" style="margin-top:.3vw"><strong>$40+ miliardi l'anno</strong> in skin e cosmetici in-game (SuperData/Unity). È il più grande mercato di moda digitale esistente — più grande dell'intero mercato luxury accessories — e non ha né istituzioni né infrastruttura.</div></div>
+        <div><div class="mono" style="font-size:.8vw;letter-spacing:.18em;color:var(--cobalt);text-transform:uppercase;font-weight:700">SOM — Il piano 3Y</div><div class="body" style="margin-top:.3vw"><strong>€1,0M di ricavi al terzo anno</strong>: una quota conservativa, pari a meno dello 0,003% del SAM. Costruita su sponsorship e partnership — non su ipotesi di consumo.</div></div>
       </div>
     </div>
     <p class="close">La domanda esiste già. <span class="accent">Quello che manca è chi la organizza.</span></p>
   </div>
-  ${foot('Stime su fonti pubbliche (Newzoo, GWI) e piano WDA · da validare')}
+  ${foot('Fonti: Newzoo Global Games Market Report 2025, SuperData/Unity · piano WDA')}
 </section>`);
 
 /* ============ 12 · IL TARGET ============ */
@@ -418,7 +419,7 @@ S.push(`
 <section class="slide s-paper">
   <div class="pad">
     <div class="khead"><span class="kicker">03 — Mercato</span><span class="kmeta">Posizionamento competitivo</span></div>
-    <h1 class="title t-sm" style="margin-bottom:1vw">Da premio a infrastruttura: <span class="accent">tre vettori di difendibilità.</span></h1>
+    <h1 class="title t-md" style="margin-bottom:.6vw">Da premio a infrastruttura: <span class="accent">tre vettori di difendibilità.</span></h1>
     <div style="display:flex;gap:3vw;flex:1;align-items:stretch">
       <div id="posMap" style="flex:0 0 40%"></div>
       <div class="rows" style="flex:1;justify-content:center">
@@ -437,7 +438,7 @@ S.push(`
 <section class="slide s-paper">
   <div class="pad">
     <div class="khead"><span class="kicker">04 — Execution</span><span class="kmeta">Il modello di business</span></div>
-    <h1 class="title t-sm" style="max-width:82%;margin-bottom:.5vw">Sponsorship-led oggi, <span class="accent">tre linee di ricavo a regime.</span></h1>
+    <h1 class="title t-md" style="max-width:80%;margin-bottom:.6vw">Sponsorship-led oggi, <span class="accent">tre linee di ricavo a regime.</span></h1>
     <p class="sublede" style="margin-bottom:1.4vw">Si parte dal ricavo più semplice e veloce da chiudere — la sponsorship dell'evento — e si attivano progressivamente le linee di piattaforma.</p>
     <table class="fin">
       <thead><tr><th>Revenue stream</th><th>Y1</th><th>Y2</th><th>Y3</th><th style="text-align:left">Status</th></tr></thead>
@@ -479,7 +480,7 @@ S.push(`
 <section class="slide s-paper">
   <div class="pad">
     <div class="khead"><span class="kicker">04 — Execution</span><span class="kmeta">Roadmap</span></div>
-    <h1 class="title t-sm" style="max-width:80%">Dalla costituzione al lancio: <span class="accent">una roadmap ancorata a una data.</span></h1>
+    <h1 class="title t-md" style="max-width:80%">Dalla costituzione al lancio: <span class="accent">una roadmap ancorata a una data.</span></h1>
     <div id="roadmap" style="flex:1;display:flex;align-items:center"></div>
     <p class="close">Settembre 2027, dentro la fashion week. <span class="accent">Ogni milestone prima di quella data è verificabile.</span></p>
   </div>
@@ -491,7 +492,7 @@ S.push(`
 <section class="slide s-paper">
   <div class="pad">
     <div class="khead"><span class="kicker">04 — Execution</span><span class="kmeta">3Y financial highlights</span></div>
-    <h1 class="title t-sm" style="max-width:80%;margin-bottom:.6vw">Tre anni: dal pre-revenue al <span class="accent">break-even operativo.</span></h1>
+    <h1 class="title t-md" style="max-width:80%;margin-bottom:.6vw">Tre anni: dal pre-revenue al <span class="accent">break-even operativo.</span></h1>
     <div style="display:flex;gap:3.5vw;flex:1;align-items:center">
       <div id="revChart" style="flex:0 0 44%;height:82%"></div>
       <div style="flex:1;display:flex;flex-direction:column;gap:1.5vw">
@@ -521,7 +522,7 @@ S.push(`
     <div style="display:flex;gap:1.4vw;margin-top:1.8vw">
       <div class="layer vcol" style="flex:1"><span class="lbar"></span><span class="lnum">Primary use · ~60%</span><span class="lh">Platform development</span><span class="lb">IT e R&amp;D: build dell'MVP, UX/UI, virtual runway, pipeline 3D e asset architecture.</span></div>
       <div class="layer vcol" style="flex:1"><span class="lbar"></span><span class="lnum">Secondary · ~40%</span><span class="lh">Media, operations &amp; legal</span><span class="lb">Impianto editoriale, PR, community e struttura. Allocazione indicativa, agganciata alle milestone del Year 0.</span></div>
-      <div class="layer vcol" style="flex:1"><span class="lbar"></span><span class="lnum">Deal terms</span><span class="lh">~€2,5M pre-money</span><span class="lb">Post-money ~€3,0M · equity ceduta ~15–20%. Round seed successivo subordinato alle milestone Y0.</span></div>
+      <div class="layer vcol" style="flex:1"><span class="lbar"></span><span class="lnum">Deal terms</span><span class="lh">~€2,5M pre-money</span><span class="lb">Post-money ~€3,0M · equity ceduta ~16,7%. Seed successivo subordinato al raggiungimento delle milestone Y0. Valutazione ancorata ai parametri WDA.</span></div>
     </div>
     <p class="close" style="margin-top:auto">Il pre-seed compra <span class="accent">milestone verificabili</span>, non promesse.</p>
   </div>
@@ -533,7 +534,7 @@ S.push(`
 <section class="slide s-paper">
   <div class="pad">
     <div class="khead"><span class="kicker">05 — The ask</span><span class="kmeta">Year 0 proof points</span></div>
-    <h1 class="title t-lg">Cosa dimostriamo <span class="accent">nei primi dodici mesi.</span></h1>
+    <h1 class="title t-md">Cosa dimostriamo <span class="accent">nei primi dodici mesi.</span></h1>
     <div class="rows" style="margin-top:1.8vw">
       <div class="rrow"><div class="rn">01</div><div class="rh">Prodotto</div><div class="rb">MVP operativo della piattaforma entro il <strong>Q1 2027</strong>: onboarding, asset hub e virtual runway online.</div></div>
       <div class="rrow"><div class="rn">02</div><div class="rh">Partnership</div><div class="rb">Interlocuzioni istituzionali <strong>formalizzate</strong> con le realtà oggi in dialogo nel sistema moda.</div></div>
@@ -554,11 +555,12 @@ S.push(`
     <h1 class="title t-md" style="margin-bottom:.6vw">Struttura lean, <span class="accent">competenze dove servono.</span></h1>
     <p class="sublede" style="margin-bottom:1.8vw">Il capitale del round va sul prodotto, non sulla struttura: il team interno resta minimo e si appoggia ad advisor e partner di esecuzione dedicati.</p>
     <div class="mgrid" style="grid-template-columns:repeat(4,1fr)">
-      <div class="mod"><div class="mk-tag">Team operativo</div><div class="mt">Chairman · CEO</div><div class="mb">Direzione strategica e commerciale; struttura interna costruita per scalare con il round.</div></div>
-      <div class="mod"><div class="mk-tag">Advisor</div><div class="mt">WDA</div><div class="mb">Advisory strategico-finanziaria: piano industriale, readiness e processo di funding.</div></div>
-      <div class="mod"><div class="mk-tag">Advisor</div><div class="mt">Andersen</div><div class="mb">Presidio legale: trademark, domini e proprietà intellettuale del sistema GFA.</div></div>
-      <div class="mod"><div class="mk-tag">Esecuzione</div><div class="mt">Partner dedicati</div><div class="mb">Sviluppo IT, design e PR con fornitori esterni specializzati, su milestone contrattualizzate.</div></div>
+      <div class="mod"><div class="mk-tag">Fondatore</div><div class="mt">Chairman · CEO</div><div class="mb">Direzione strategica, fundraising e relazioni istituzionali. Background in fashion-tech e innovazione digitale.</div></div>
+      <div class="mod"><div class="mk-tag">Advisory finanziario</div><div class="mt">WDA</div><div class="mb">Piano industriale, modello finanziario, investor readiness e supporto operativo al round pre-seed e seed.</div></div>
+      <div class="mod"><div class="mk-tag">Advisory legale</div><div class="mt">Andersen</div><div class="mb">Costituzione societaria, protezione IP, registrazione trademark e struttura contrattuale con creator e publisher.</div></div>
+      <div class="mod"><div class="mk-tag">Esecuzione tecnica</div><div class="mt">Partner IT dedicati</div><div class="mb">Sviluppo full-stack, pipeline 3D, UX/UI e infrastruttura cloud — su milestone contrattualizzate e verificabili.</div></div>
     </div>
+    <div class="layer" style="margin-top:1.2vw"><span class="lbar"></span><span class="lnum">Prossimi hire</span><span class="lh" style="flex:0 0 14vw">Post round · Y0</span><span class="lb">CTO / Tech Lead per internalizzare lo sviluppo della piattaforma; Head of Content per il media engine e i canali editoriali.</span></div>
     <p class="close" style="margin-top:auto">Ogni euro del round ha una destinazione: <span class="accent">il prodotto e il lancio.</span></p>
   </div>
   ${foot()}
