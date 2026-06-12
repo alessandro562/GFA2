@@ -24,11 +24,12 @@
 :root{
   --ink:#0B0B0F;
   --paper:#F1EEE6;
+  --paper-2:#E7E4DA;
   --cobalt:#1B2BFF;
-  --ld:rgba(241,238,230,.14);
-  --ll:rgba(11,11,15,.13);
-  --md:rgba(241,238,230,.62);
-  --ml:rgba(11,11,15,.58);
+  --ld:rgba(241,238,230,.16);
+  --ll:rgba(11,11,15,.14);
+  --md:rgba(241,238,230,.66);
+  --ml:rgba(11,11,15,.60);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;background:#000;font-family:'Archivo',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
@@ -43,83 +44,86 @@ html,body{height:100%;background:#000;font-family:'Archivo',system-ui,sans-serif
 .pad{position:absolute;inset:0;padding:5%;display:flex;flex-direction:column;z-index:2}
 
 /* kicker / header */
-.kicker{font-family:'Space Mono',monospace;font-weight:700;font-size:.9vw;letter-spacing:.26em;text-transform:uppercase;color:var(--cobalt)}
+.kicker{font-family:'Space Mono',monospace;font-weight:700;font-size:.88vw;letter-spacing:.24em;text-transform:uppercase;color:var(--cobalt)}
 .khead{display:flex;justify-content:space-between;align-items:center;margin-bottom:auto}
-.kmeta{font-family:'Space Mono',monospace;font-weight:400;font-size:.8vw;letter-spacing:.2em;text-transform:uppercase;opacity:.5}
+.kmeta{font-family:'Space Mono',monospace;font-weight:400;font-size:.78vw;letter-spacing:.2em;text-transform:uppercase;opacity:.48}
 
-/* titles — sentence case, tight, mai decorativi (brand book §05) */
+/* titles — sentence case, tight (brand book §05) */
 .title{font-weight:900;letter-spacing:-.03em;line-height:.98;text-wrap:balance}
-.t-xl{font-size:5.6vw}.t-lg{font-size:4.1vw}.t-md{font-size:3vw}.t-sm{font-size:2.3vw}
-.subhead{font-weight:600;font-size:1.5vw;line-height:1.34}
-.body{font-weight:400;font-size:1.1vw;line-height:1.5}
+.t-lg{font-size:4.1vw}.t-md{font-size:3vw}.t-sm{font-size:2.3vw}
+.subhead{font-weight:600;font-size:1.4vw;line-height:1.4}
+.sublede{font-weight:500;font-size:1.12vw;line-height:1.5;color:var(--ml);max-width:62ch;margin-top:1vw}
+.s-ink .sublede{color:var(--md)}
+.body{font-weight:400;font-size:1.05vw;line-height:1.5}
 .accent{color:var(--cobalt)}
 
 .foot{position:absolute;left:5%;right:5%;bottom:2.8%;display:flex;justify-content:space-between;align-items:center;z-index:2;
-  font-family:'Space Mono',monospace;font-weight:400;font-size:.76vw;letter-spacing:.18em;text-transform:uppercase;opacity:.42}
+  font-family:'Space Mono',monospace;font-weight:400;font-size:.74vw;letter-spacing:.18em;text-transform:uppercase;opacity:.45}
+.foot .fbrand{display:inline-flex;align-items:center;gap:.55vw}
+.foot .fmk{width:.92vw;height:.98vw;display:inline-block;flex:none}
+.foot .fmk svg{display:block;width:100%;height:100%}
+.foot .pg{display:none}
 
 /* close line */
-.close{font-weight:700;font-size:1.4vw;letter-spacing:-.01em;line-height:1.25}
+.close{font-weight:700;font-size:1.35vw;letter-spacing:-.01em;line-height:1.3}
 
-/* ---- graphic primitives ---- */
-.sym-bleed{position:absolute;z-index:0;pointer-events:none}
-.sym-bleed svg{display:block;width:100%;height:auto}
-.wm{position:absolute;z-index:0;opacity:.05;pointer-events:none}
-.wm svg{display:block;width:100%;height:auto}
+/* ---- content primitives ---- */
 
-/* diagram containers */
-.conv{position:relative;flex:1;display:flex;align-items:center;justify-content:center}
-.eco{position:relative;flex:1}
-
-/* layer stack */
+/* layer stack (righe orizzontali con barra cobalto) */
 .lstack{display:flex;flex-direction:column;gap:.9vw}
-.layer{position:relative;display:flex;align-items:center;gap:1.6vw;padding:1.5vw 1.8vw;border:1px solid var(--ll);overflow:hidden}
-.s-ink .layer{border-color:var(--ld)}
-.layer .lnum{font-family:'Space Mono',monospace;font-weight:700;font-size:.85vw;letter-spacing:.18em;text-transform:uppercase;color:var(--cobalt);flex:0 0 6vw}
-.layer .lh{font-weight:800;font-size:1.5vw;letter-spacing:-.01em;flex:0 0 14vw;line-height:1.05}
-.layer .lb{font-weight:400;font-size:1vw;line-height:1.4;opacity:.82;flex:1}
-.layer .lbar{position:absolute;left:0;top:0;bottom:0;width:.32vw;background:var(--cobalt)}
-/* variante verticale (card) — flex-basis neutralizzato in direzione colonna */
-.layer.vcol{flex-direction:column;align-items:flex-start;gap:.7vw}
+.layer{position:relative;display:flex;align-items:center;gap:1.6vw;padding:1.4vw 1.8vw;border:1px solid var(--ll);overflow:hidden;background:rgba(255,255,255,.25)}
+.s-ink .layer{border-color:var(--ld);background:transparent}
+.layer .lnum{font-family:'Space Mono',monospace;font-weight:700;font-size:.82vw;letter-spacing:.16em;text-transform:uppercase;color:var(--cobalt);flex:0 0 7vw}
+.layer .lh{font-weight:800;font-size:1.4vw;letter-spacing:-.01em;flex:0 0 15vw;line-height:1.06}
+.layer .lb{font-weight:400;font-size:1vw;line-height:1.45;opacity:.85;flex:1}
+.layer .lbar{position:absolute;left:0;top:0;bottom:0;width:.3vw;background:var(--cobalt)}
+.layer.vcol{flex-direction:column;align-items:flex-start;gap:.6vw}
 .layer.vcol .lnum,.layer.vcol .lh,.layer.vcol .lb{flex:none}
 .layer.vcol .lh{font-size:1.3vw}
 
 /* module grid */
 .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1vw}
-.mod{border:1px solid var(--ld);padding:1.5vw;display:flex;flex-direction:column;gap:.7vw;min-height:9.5vw}
-.s-paper .mod{border-color:var(--ll)}
-.mod .mi{width:2.4vw;height:2.4vw}
-.mod .mt{font-weight:800;font-size:1.25vw;letter-spacing:-.01em;line-height:1.05;margin-top:auto}
-.mod .mb{font-weight:400;font-size:.9vw;line-height:1.38;opacity:.78}
-.mod .mk-tag{font-family:'Space Mono',monospace;font-weight:700;font-size:.78vw;letter-spacing:.16em;color:var(--cobalt);text-transform:uppercase}
+.mod{border:1px solid var(--ll);padding:1.4vw;display:flex;flex-direction:column;gap:.6vw;min-height:9vw;background:rgba(255,255,255,.25)}
+.s-ink .mod{border-color:var(--ld);background:transparent}
+.mod .mi{width:2.2vw;height:2.2vw}
+.mod .mt{font-weight:800;font-size:1.2vw;letter-spacing:-.01em;line-height:1.05;margin-top:auto}
+.mod .mb{font-weight:400;font-size:.88vw;line-height:1.42;opacity:.8}
+.mod .mk-tag{font-family:'Space Mono',monospace;font-weight:700;font-size:.74vw;letter-spacing:.16em;color:var(--cobalt);text-transform:uppercase}
 
 /* pillar rows */
 .rows{display:flex;flex-direction:column}
-.rrow{display:flex;gap:1.6vw;padding:1.15vw 0;border-top:1px solid var(--ld);align-items:flex-start}
-.s-paper .rrow{border-top-color:var(--ll)}
-.rrow:last-child{border-bottom:1px solid var(--ld)}
-.s-paper .rrow:last-child{border-bottom-color:var(--ll)}
-.rrow .rn{flex:0 0 3vw;font-family:'Space Mono',monospace;font-weight:700;font-size:.92vw;color:var(--cobalt);padding-top:.25vw}
-.rrow .rh{flex:0 0 16vw;font-weight:800;font-size:1.3vw;letter-spacing:-.01em;line-height:1.05}
-.rrow .rb{flex:1;font-weight:400;font-size:1.02vw;line-height:1.42;opacity:.82}
+.rrow{display:flex;gap:1.6vw;padding:1.1vw 0;border-top:1px solid var(--ll);align-items:flex-start}
+.s-ink .rrow{border-top-color:var(--ld)}
+.rrow:last-child{border-bottom:1px solid var(--ll)}
+.s-ink .rrow:last-child{border-bottom-color:var(--ld)}
+.rrow .rn{flex:0 0 3vw;font-family:'Space Mono',monospace;font-weight:700;font-size:.9vw;color:var(--cobalt);padding-top:.3vw}
+.rrow .rh{flex:0 0 15vw;font-weight:800;font-size:1.25vw;letter-spacing:-.01em;line-height:1.1}
+.rrow .rsub{display:block;font-family:'Space Mono',monospace;font-weight:400;font-size:.72vw;letter-spacing:.12em;text-transform:uppercase;color:var(--cobalt);margin-top:.35vw}
+.rrow .rb{flex:1;font-weight:400;font-size:1vw;line-height:1.46;opacity:.85}
+
+/* user journey steps */
+.steps{display:flex;gap:0;align-items:stretch}
+.step{flex:1;border:1px solid var(--ll);padding:1.3vw 1.2vw;display:flex;flex-direction:column;gap:.55vw;background:rgba(255,255,255,.25)}
+.step .sn{font-family:'Space Mono',monospace;font-weight:700;font-size:.8vw;letter-spacing:.16em;color:var(--cobalt)}
+.step .st{font-weight:800;font-size:1.12vw;letter-spacing:-.01em;line-height:1.08}
+.step .sb{font-weight:400;font-size:.84vw;line-height:1.42;opacity:.8}
+.step-arr{flex:0 0 2.2vw;display:flex;align-items:center;justify-content:center;color:var(--cobalt);font-weight:900;font-size:1.2vw}
 
 /* stat */
 .stat{display:flex;flex-direction:column;line-height:1}
-.stat .v{font-weight:900;font-size:3.6vw;letter-spacing:-.035em;line-height:.95}
-.stat .l{font-family:'Space Mono',monospace;font-weight:400;font-size:.78vw;letter-spacing:.16em;text-transform:uppercase;opacity:.55;margin-top:.6vw}
+.stat .v{font-weight:900;font-size:3.2vw;letter-spacing:-.035em;line-height:.95}
+.stat .l{font-family:'Space Mono',monospace;font-weight:400;font-size:.76vw;letter-spacing:.14em;text-transform:uppercase;opacity:.55;margin-top:.6vw;line-height:1.5}
 
 /* table */
 table.fin{width:100%;border-collapse:collapse}
-table.fin th,table.fin td{text-align:right;padding:1vw 1.1vw;border-bottom:1px solid var(--ld)}
-.s-paper table.fin th,.s-paper table.fin td{border-bottom-color:var(--ll)}
-table.fin th{font-family:'Space Mono',monospace;font-weight:700;font-size:.8vw;letter-spacing:.14em;text-transform:uppercase;color:var(--cobalt)}
-table.fin td:first-child,table.fin th:first-child{text-align:left;font-weight:600;font-size:1.05vw}
-table.fin td{font-size:1.15vw}
+table.fin th,table.fin td{text-align:right;padding:.95vw 1.1vw;border-bottom:1px solid var(--ll)}
+.s-ink table.fin th,.s-ink table.fin td{border-bottom-color:var(--ld)}
+table.fin th{font-family:'Space Mono',monospace;font-weight:700;font-size:.78vw;letter-spacing:.14em;text-transform:uppercase;color:var(--cobalt)}
+table.fin td:first-child,table.fin th:first-child{text-align:left;font-weight:600;font-size:1.02vw}
+table.fin td{font-size:1.1vw}
 table.fin tr.hl td{color:var(--cobalt);font-weight:800}
 table.fin td .big{font-weight:800}
-table.fin td.sub{padding-left:2.2vw;font-weight:400;opacity:.75;font-size:.95vw}
-
-/* chev */
-.chev{color:var(--cobalt);font-weight:900;margin-right:.5vw}
+table.fin td.sub{padding-left:2.2vw;font-weight:400;opacity:.75;font-size:.92vw}
 
 /* nav */
 #nav{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:14px;align-items:center;z-index:50;
@@ -136,6 +140,7 @@ table.fin td.sub{padding-left:2.2vw;font-weight:400;opacity:.75;font-size:.95vw}
   #deck{position:static;display:block}
   .stage{position:static;width:100vw;height:auto;max-width:none;max-height:none}
   .slide{display:block;position:relative;width:100vw;height:56.25vw;page-break-after:always;break-inside:avoid}
+  .foot .pg{display:inline}
 }
 </style>
 </head>
@@ -144,23 +149,20 @@ table.fin td.sub{padding-left:2.2vw;font-weight:400;opacity:.75;font-size:.95vw}
 <div id="nav"><button id="prev" aria-label="Slide precedente">‹</button><span id="counter" class="mono">—</span><button id="next" aria-label="Slide successiva">›</button></div>
 
 <script>
-/* ============ GFA DECK v3 ============ */
+/* ============ GFA DECK v4 ============ */
 
 /* ---- "The Shift" — geometria ufficiale dal brand book ----
-   Asse verticale · offset o=9 · semi-seam s=5 · raggio r=64 (viewBox 200).
-   Metà sinistra sale, metà destra scende: la categoria "coming into register". */
+   Asse verticale · offset o=9 · semi-seam s=5 · raggio r=64 (viewBox 200). */
 function markStepped(fill){
   return '<svg viewBox="31 27 138 146" xmlns="http://www.w3.org/2000/svg">'
     +'<path d="M 95 27 A 64 64 0 0 0 95 155 Z" fill="'+fill+'"/>'
     +'<path d="M 105 45 A 64 64 0 0 1 105 173 Z" fill="'+fill+'"/></svg>';
 }
-/* stato "locked": disco pieno con seam sottile — il momento del lock */
 function markLocked(fill,seam){
   return '<svg viewBox="36 36 128 128" xmlns="http://www.w3.org/2000/svg">'
     +'<circle cx="100" cy="100" r="64" fill="'+fill+'"/>'
     +'<rect x="97.5" y="36" width="5" height="128" fill="'+seam+'"/></svg>';
 }
-/* paths del marchio in coordinate arbitrarie (per i diagrammi) */
 function markPaths(cx,cy,r,fill){
   var k=r/64, o=9*k, s=5*k;
   var lCx=cx-s,lCy=cy-o,rCx=cx+s,rCy=cy+o;
@@ -176,222 +178,267 @@ function icon(name){
     runway:'<path d="M24 6 L40 42 H8 Z" '+s+'/><path d="M16 30h16" '+s+'/>',
     cube:'<path d="M24 6 41 16V34L24 44 7 34V16Z" '+s+'/><path d="M24 6V25M24 25 7 16M24 25 41 16M24 25V44" '+s+'/>',
     vote:'<path d="M10 26l8 8 20-20" '+s+'/><rect x="6" y="6" width="36" height="36" rx="4" '+s+'/>',
-    jury:'<path d="M24 6l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1Z" '+s+'/>'
+    jury:'<path d="M24 6l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1Z" '+s+'/>',
+    cloud:'<path d="M14 38h22a8 8 0 0 0 1-16 12 12 0 0 0-23 3 7 7 0 0 0 0 13Z" '+s+'/>',
+    shield:'<path d="M24 6l14 6v10c0 10-6 16-14 20-8-4-14-10-14-20V12Z" '+s+'/><path d="M17 24l5 5 9-10" '+s+'/>',
+    play:'<circle cx="24" cy="24" r="18" '+s+'/><path d="M20 17l11 7-11 7Z" '+s+'/>'
   };
   return '<svg viewBox="0 0 48 48" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">'+(p[name]||'')+'</svg>';
 }
 
 function foot(left){
-  return '<div class="foot"><span>'+(left||'Gaming Fashion Awards')+'</span><span data-pg>Organizing the convergence</span></div>';
+  return '<div class="foot"><span class="fbrand"><i class="fmk">'+markStepped('#1B2BFF')+'</i>'
+    +(left||'Gaming Fashion Awards')+'</span><span>Organizing the convergence<span class="pg" data-pg></span></span></div>';
 }
 
 var S=[];
 
-/* ---- 01 · COVER ---- */
+/* ============ 01 · COVER ============ */
 S.push(`
 <section class="slide s-ink">
-  <span class="sym-bleed" style="right:-6%;top:-13%;width:34%">${markStepped('#1B2BFF')}</span>
-  <div class="pad">
-    <div class="khead" style="margin-bottom:0"><span class="kmeta">Gaming · Fashion · Awards™</span><span class="kmeta" style="margin-right:30%">Milano · IT · Est. 2026 · Confidential</span></div>
-    <div style="margin-top:auto;max-width:70%">
-      <div class="title" style="font-size:7vw;letter-spacing:-.04em;line-height:.86;text-transform:uppercase">Gaming<br>Fashion<br>Awards<span class="accent">.</span></div>
-      <p class="subhead" style="margin-top:2.2vw;max-width:72%">La piattaforma media-tech che organizza la convergenza tra <span class="accent">digital fashion, gaming e creator economy</span>.</p>
+  <div class="pad" style="align-items:stretch">
+    <div style="display:flex;justify-content:space-between">
+      <span class="kmeta">Investor pre-seed deck · Confidential</span>
+      <span class="kmeta">Milano · Est. 2026</span>
+    </div>
+    <div style="margin:auto 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:2.4vw">
+      <span style="width:9vw;display:block">${markStepped('#1B2BFF')}</span>
+      <div class="title" style="font-size:5.6vw;letter-spacing:-.04em;line-height:.86;text-transform:uppercase">Gaming<br>Fashion<br>Awards<span class="accent">.</span></div>
+      <p class="subhead" style="max-width:44ch;color:var(--md);font-weight:500">L'award e la piattaforma che trasformano la moda digitale nel gaming in un'industria con regole, talenti riconosciuti e un mercato.</p>
+    </div>
+    <div style="display:flex;justify-content:space-between">
+      <span class="kmeta">Organizing the convergence</span>
+      <span class="kmeta">Gaming · Fashion · Awards™</span>
     </div>
   </div>
-  ${foot('Investor pre-seed deck')}
 </section>`);
 
-/* ---- 02 · LA CONVERGENZA ---- */
+/* ============ 02 · IL CONTESTO ============ */
 S.push(`
 <section class="slide s-paper">
   <div class="pad">
-    <div class="khead"><span class="kicker">01 — Context</span><span class="kmeta">La convergenza</span></div>
-    <h1 class="title t-md" style="max-width:74%">Tre mondi. <span class="accent">Un solo territorio.</span></h1>
-    <div class="conv"><div id="convDiagram"></div></div>
-    <p class="close">Nessun player presidia oggi l'intersezione <span class="accent">in modo strutturato.</span></p>
-  </div>
-  ${foot()}
-</section>`);
-
-/* ---- 03 · IL VUOTO ---- */
-S.push(`
-<section class="slide s-ink">
-  <span class="wm" style="right:2%;bottom:4%;width:26%">${markStepped('#F1EEE6')}</span>
-  <div class="pad">
-    <div class="khead"><span class="kicker">01 — Context</span><span class="kmeta">Il vuoto</span></div>
-    <h1 class="title t-lg" style="max-width:70%">Il territorio c'è.<br>L'infrastruttura <span class="accent">no.</span></h1>
-    <div class="rows" style="margin-top:2.4vw;max-width:84%">
-      <div class="rrow"><div class="rn">01</div><div class="rh">Legittimazione</div><div class="rb">Mancano formati di legittimazione culturale che riconoscano e selezionino il talento all'incrocio tra moda e gaming.</div></div>
-      <div class="rrow"><div class="rn">02</div><div class="rh">Pipeline</div><div class="rb">Manca una pipeline strutturata che colleghi creator, brand fashion e luxury, gaming publisher e media.</div></div>
-      <div class="rrow"><div class="rn">03</div><div class="rh">Asset layer</div><div class="rb">Manca un framework per la distribuzione, la valorizzazione e l'uso commerciale degli asset digitali.</div></div>
+    <div class="khead"><span class="kicker">01 — Contesto</span><span class="kmeta">Il punto di partenza</span></div>
+    <h1 class="title t-md" style="max-width:80%">La moda digitale è già un mercato.<br>Le manca <span class="accent">un'industria.</span></h1>
+    <p class="sublede">Dentro i videogiochi si spendono oltre 40 miliardi di dollari l'anno in skin e abbigliamento virtuale. I brand ci sono già, i creator producono già. Quello che non esiste è la struttura che li metta in relazione.</p>
+    <div class="rows" style="margin-top:1.8vw">
+      <div class="rrow"><div class="rn">01</div><div class="rh">I brand ci sono già<span class="rsub">La domanda</span></div><div class="rb">Balenciaga × Fortnite, Gucci × Roblox, Louis Vuitton × League of Legends: il lusso ha scelto il gaming come canale verso la Gen Z. Ma ogni operazione nasce come esperimento isolato, senza un interlocutore di settore.</div></div>
+      <div class="rrow"><div class="rn">02</div><div class="rh">Il talento c'è già<span class="rsub">L'offerta</span></div><div class="rb">Migliaia di designer 3D creano abiti digitali con strumenti professionali. Nessuna istituzione li riconosce, li seleziona o li porta sul mercato: il talento resta invisibile ai brand che lo cercano.</div></div>
+      <div class="rrow"><div class="rn">03</div><div class="rh">Il collegamento no<span class="rsub">Il vuoto</span></div><div class="rb">Non esiste un'autorità che validi il talento, una piattaforma che colleghi creator e brand, né un framework per distribuire gli asset digitali oltre il gioco in cui nascono.</div></div>
     </div>
-    <p class="close" style="margin-top:auto">Senza infrastruttura è rumore. Con un'infrastruttura, <span class="accent">diventa una categoria.</span></p>
+    <p class="close" style="margin-top:auto">Un mercato da miliardi senza un punto di riferimento. <span class="accent">È lo spazio in cui nasce GFA.</span></p>
   </div>
   ${foot()}
 </section>`);
 
-/* ---- 04 · MANIFESTO ---- */
+/* ============ 03 · LA CONVERGENZA ============ */
 S.push(`
-<section class="slide s-ink">
-  <span class="sym-bleed" style="right:-8%;top:-16%;width:32%;opacity:.92">${markStepped('#1B2BFF')}</span>
+<section class="slide s-paper">
+  <div class="pad">
+    <div class="khead"><span class="kicker">01 — Contesto</span><span class="kmeta">La convergenza</span></div>
+    <h1 class="title t-md" style="max-width:78%">Tre industrie, <span class="accent">una traiettoria.</span></h1>
+    <p class="sublede">Moda digitale, gaming e creator economy stanno convergendo sullo stesso punto: l'identità digitale delle persone. È un mercato nuovo, che nessuno dei tre mondi può presidiare da solo.</p>
+    <div style="position:relative;flex:1;display:flex;align-items:center;justify-content:center"><div id="convDiagram"></div></div>
+    <p class="close">L'intersezione cresce da anni. <span class="accent">Nessun player la presidia in modo strutturato.</span></p>
+  </div>
+  ${foot()}
+</section>`);
+
+/* ============ 04 · LA TESI ============ */
+S.push(`
+<section class="slide s-paper">
   <div class="pad" style="justify-content:center">
-    <span class="kicker" style="margin-bottom:1.6vw">01 — Context · Manifesto</span>
-    <h1 class="title" style="font-size:4.7vw;max-width:74%">Non un award show.<br>Una piattaforma <span class="accent" style="white-space:nowrap">media-tech.</span></h1>
-    <p class="subhead" style="margin-top:2.2vw;max-width:56%;color:var(--md)">Media engine, creator pipeline e asset layer in un unico sistema. L'award è il motore di attenzione. La piattaforma è il prodotto.</p>
-    <p class="mono" style="margin-top:1.8vw;font-size:1vw;letter-spacing:.2em;text-transform:uppercase;color:var(--cobalt)">Built as platform. Powered by attention.</p>
+    <span class="kicker" style="margin-bottom:1.6vw">01 — Contesto · La tesi</span>
+    <h1 class="title t-lg" style="max-width:82%">Non un premio.<br>L'infrastruttura <span class="accent">di un settore.</span></h1>
+    <p class="sublede" style="font-size:1.25vw;max-width:58ch;margin-top:1.6vw">GFA usa il formato award per accendere il mercato — è il modo più rapido per creare attenzione e autorevolezza — ma è costruita come piattaforma. Ogni edizione produce tre asset che restano: copertura media, creator qualificati nel network, inventory commerciale per i brand.</p>
+    <p class="mono" style="margin-top:2vw;font-size:.95vw;letter-spacing:.2em;text-transform:uppercase;color:var(--cobalt)">Built as platform · Powered by attention</p>
   </div>
   ${foot()}
 </section>`);
 
-/* ---- 05 · TRE LAYER ---- */
+/* ============ 05 · IL SISTEMA ============ */
 S.push(`
 <section class="slide s-paper">
   <div class="pad">
-    <div class="khead"><span class="kicker">02 — Platform</span><span class="kmeta">Three reinforcing layers</span></div>
-    <h1 class="title t-md" style="margin-bottom:1.8vw">Un sistema, <span class="accent">tre layer integrati.</span></h1>
+    <div class="khead"><span class="kicker">02 — Prodotto</span><span class="kmeta">Il sistema</span></div>
+    <h1 class="title t-md" style="margin-bottom:.6vw">Un sistema, <span class="accent">tre layer che si alimentano.</span></h1>
+    <p class="sublede" style="margin-bottom:1.6vw">Ogni layer genera valore da solo. Insieme formano un ciclo: l'attenzione porta creator, i creator generano asset, gli asset riportano brand e attenzione.</p>
     <div class="lstack">
-      <div class="layer"><span class="lbar"></span><span class="lnum">Layer 01</span><span class="lh">Award &amp; media engine</span><span class="lb">Genera attenzione, PR, sponsor inventory e legittimazione culturale. È il motore che accende tutto il resto.</span></div>
-      <div class="layer"><span class="lbar"></span><span class="lnum">Layer 02</span><span class="lh">Creator platform</span><span class="lb">Onboarding creator, virtual runway, upload di asset 3D, community voting, giuria tecnica. Il prodotto operativo.</span></div>
-      <div class="layer"><span class="lbar"></span><span class="lnum">Layer 03</span><span class="lh">Rights &amp; asset layer</span><span class="lb">Framework per la distribuzione degli asset digitali. L'optionality di lungo periodo del sistema.</span></div>
+      <div class="layer"><span class="lbar"></span><span class="lnum">Layer 01<br>Attenzione</span><span class="lh">Award &amp; media engine</span><span class="lb">La notte degli award, la copertura stampa, i contenuti social. È il momento di massima visibilità del settore: genera audience, autorevolezza culturale e i ricavi sponsor che finanziano il sistema.</span></div>
+      <div class="layer"><span class="lbar"></span><span class="lnum">Layer 02<br>Network</span><span class="lh">Creator platform</span><span class="lb">Dove l'attenzione diventa infrastruttura: profili verificati, virtual runway, voting. Ogni edizione converte visibilità in creator attivi e dati proprietari sulla piattaforma.</span></div>
+      <div class="layer"><span class="lbar"></span><span class="lnum">Layer 03<br>Ricavi</span><span class="lh">Rights &amp; asset layer</span><span class="lb">Dove il network diventa ricavi ricorrenti: la distribuzione commerciale degli asset premiati, fino agli accordi diretti con i gaming publisher dal quarto anno.</span></div>
     </div>
-    <p class="close" style="margin-top:auto">Ogni layer genera valore in autonomia. Insieme, <span class="accent">costruiscono una posizione difendibile.</span></p>
+    <p class="close" style="margin-top:auto">L'attenzione costruisce il network. <span class="accent">Il network costruisce il business.</span></p>
   </div>
   ${foot()}
 </section>`);
 
-/* ---- 06 · LA PIATTAFORMA ---- */
-S.push(`
-<section class="slide s-ink">
-  <div class="pad">
-    <div class="khead"><span class="kicker">02 — Platform</span><span class="kmeta">La piattaforma</span></div>
-    <h1 class="title t-md" style="margin-bottom:1.6vw">La piattaforma <span class="accent">è il prodotto.</span></h1>
-    <div class="mgrid">
-      <div class="mod"><div class="mi">${icon('user')}</div><div class="mt">Onboarding creator</div><div class="mb">Registrazione strutturata, profilazione, verifica.</div></div>
-      <div class="mod"><div class="mi">${icon('runway')}</div><div class="mt">Virtual runway</div><div class="mb">Lo spazio di presentazione degli asset, costruito come format.</div></div>
-      <div class="mod"><div class="mi">${icon('cube')}</div><div class="mt">Upload asset 3D</div><div class="mb">Pipeline tecnica per i contenuti dei creator.</div></div>
-      <div class="mod"><div class="mi">${icon('vote')}</div><div class="mt">Community voting</div><div class="mb">Meccanica di partecipazione e selezione dal basso.</div></div>
-      <div class="mod"><div class="mi">${icon('jury')}</div><div class="mt">Giuria tecnica</div><div class="mb">Autorevolezza editoriale sopra il voto popolare.</div></div>
-      <div class="mod" style="border-color:var(--cobalt);justify-content:center"><div class="mk-tag">Status</div><div class="mt" style="margin-top:0">MVP · Q1 2027</div><div class="mb">Sviluppo in corso.</div></div>
-    </div>
-    <p class="close" style="margin-top:auto">Cinque moduli, un solo prodotto: <span class="accent">l'infrastruttura della categoria.</span></p>
-  </div>
-  ${foot()}
-</section>`);
-
-/* ---- 07 · CREATOR PIPELINE ---- */
+/* ============ 06 · LA PIATTAFORMA ============ */
 S.push(`
 <section class="slide s-paper">
   <div class="pad">
-    <div class="khead"><span class="kicker">02 — Platform</span><span class="kmeta">The creator pipeline</span></div>
-    <h1 class="title t-md" style="max-width:70%">Il primo asset operativo:<br>la <span class="accent">creator pipeline.</span></h1>
-    <div style="display:flex;gap:4vw;margin-top:1.6vw;align-items:center;flex:1">
-      <div id="funnel" style="flex:0 0 26%;max-height:100%"></div>
-      <div class="body" style="flex:1;display:flex;flex-direction:column;gap:1.3vw;max-width:52%">
-        <div><span class="chev">→</span>GFA non raccoglie creator solo per l'edizione: li ingaggia, li seleziona e li mantiene in un <strong>funnel proprietario</strong>.</div>
-        <div><span class="chev">→</span>Ogni edizione amplia la base, qualifica i talenti e produce <strong>inventory</strong> per brand, sponsor e publisher.</div>
-        <div><span class="chev">→</span>La pipeline è il vero <strong>asset difensivo</strong>: più cresce, più è difficile da replicare.</div>
-      </div>
+    <div class="khead"><span class="kicker">02 — Prodotto</span><span class="kmeta">La piattaforma</span></div>
+    <h1 class="title t-md" style="margin-bottom:.6vw">La piattaforma <span class="accent">è il prodotto.</span></h1>
+    <p class="sublede" style="margin-bottom:1.6vw">Un'applicazione web che trasforma un evento annuale in un'infrastruttura permanente: identità dei creator, contenuto distribuibile e selezione del talento in un unico ambiente.</p>
+    <div class="mgrid">
+      <div class="mod"><div class="mi">${icon('user')}</div><div class="mt">Profili creator</div><div class="mb">Identità verificata, portfolio 3D, metriche di partecipazione. La base anagrafica del network — un dato che oggi non esiste da nessuna parte.</div></div>
+      <div class="mod"><div class="mi">${icon('runway')}</div><div class="mt">Virtual runway</div><div class="mb">Gli abiti digitali sfilano in un viewer 3D condivisibile: ogni candidatura diventa contenuto per il media engine e vetrina per i brand.</div></div>
+      <div class="mod"><div class="mi">${icon('cube')}</div><div class="mt">Asset hub</div><div class="mb">Upload, validazione tecnica e archivio degli asset 3D nei formati standard di settore. Il magazzino su cui si costruisce la distribuzione.</div></div>
+      <div class="mod"><div class="mi">${icon('vote')}</div><div class="mt">Community voting</div><div class="mb">Il pubblico partecipa alla selezione. Per la piattaforma è engagement; per gli sponsor è un'audience misurabile e profilata.</div></div>
+      <div class="mod"><div class="mi">${icon('jury')}</div><div class="mt">Giuria tecnica</div><div class="mb">Designer, publisher e voci autorevoli del settore sopra il voto popolare: è la giuria a rendere il premio una validazione di mercato.</div></div>
+      <div class="mod" style="border-color:var(--cobalt);justify-content:center"><div class="mk-tag">Status</div><div class="mt" style="margin-top:0">MVP · Q1 2027</div><div class="mb">In sviluppo con partner tecnologici dedicati.</div></div>
     </div>
-    <p class="close">Una creator base verticalizzata non si compra. <span class="accent">Si costruisce.</span></p>
+    <p class="close" style="margin-top:auto">Cinque moduli, un obiettivo: <span class="accent">rendere il talento visibile, misurabile e commerciabile.</span></p>
   </div>
   ${foot()}
 </section>`);
 
-/* ---- 08 · RIGHTS & ASSET ---- */
+/* ============ 07 · COME FUNZIONA ============ */
 S.push(`
-<section class="slide s-ink">
-  <span class="wm" style="right:2%;top:8%;width:24%">${markStepped('#F1EEE6')}</span>
+<section class="slide s-paper">
   <div class="pad">
-    <div class="khead"><span class="kicker">02 — Platform</span><span class="kmeta">Rights &amp; asset layer</span></div>
-    <h1 class="title t-md" style="max-width:74%">Asset digitali: un'<span class="accent">optionality di lungo periodo.</span></h1>
-    <div style="display:flex;gap:3.5vw;margin-top:2vw;align-items:flex-start;flex:1">
-      <div class="body" style="flex:1;display:flex;flex-direction:column;gap:1.2vw;max-width:52%">
-        <div><span class="chev">→</span>Framework per la distribuzione degli asset 3D dei creator, basato sul <strong>diritto di distribuzione</strong> — non sulla titolarità del copyright.</div>
-        <div><span class="chev">→</span>Monetizzazione impostata oggi, attivata progressivamente: <strong>voce minore</strong> nel piano Y2–Y3.</div>
-        <div><span class="chev">→</span>Sviluppo pieno con gli <strong>accordi diretti con i gaming publisher</strong>, dal Y4 in avanti.</div>
+    <div class="khead"><span class="kicker">02 — Prodotto</span><span class="kmeta">Come funziona</span></div>
+    <h1 class="title t-md" style="margin-bottom:.6vw">Dal portfolio all'award, <span class="accent">in cinque passaggi.</span></h1>
+    <p class="sublede" style="margin-bottom:2vw">Il percorso del creator è il prodotto: ogni passaggio genera contenuto per il media engine, dati per la piattaforma e valore per gli sponsor.</p>
+    <div class="steps">
+      <div class="step"><span class="sn">01</span><span class="st">Candidatura</span><span class="sb">Il creator si registra, costruisce il profilo e carica il proprio asset 3D nelle categorie di concorso.</span></div>
+      <div class="step-arr">→</div>
+      <div class="step"><span class="sn">02</span><span class="st">Showcase</span><span class="sb">L'asset entra in virtual runway: visibile, condivisibile, già formato per i canali social del media engine.</span></div>
+      <div class="step-arr">→</div>
+      <div class="step"><span class="sn">03</span><span class="st">Selezione</span><span class="sb">Voto della community più giuria tecnica: il talento emerge con una validazione doppia, popolare e di settore.</span></div>
+      <div class="step-arr">→</div>
+      <div class="step"><span class="sn">04</span><span class="st">Award</span><span class="sb">La premiazione è il momento media dell'anno: palco, stampa, sponsor. L'attenzione si concentra in una notte.</span></div>
+      <div class="step-arr">→</div>
+      <div class="step"><span class="sn">05</span><span class="st">Roster</span><span class="sb">I premiati entrano nel roster GFA: visibilità continua, matchmaking con i brand, distribuzione degli asset.</span></div>
+    </div>
+    <p class="close" style="margin-top:auto">L'evento dura una notte. <span class="accent">Quello che produce resta nella piattaforma.</span></p>
+  </div>
+  ${foot()}
+</section>`);
+
+/* ============ 08 · TECNOLOGIA ============ */
+S.push(`
+<section class="slide s-paper">
+  <div class="pad">
+    <div class="khead"><span class="kicker">02 — Prodotto</span><span class="kmeta">Tecnologia</span></div>
+    <h1 class="title t-md" style="margin-bottom:.6vw">Un MVP focalizzato, <span class="accent">su componenti solidi.</span></h1>
+    <p class="sublede" style="margin-bottom:1.8vw">Niente ricerca, niente tecnologia da inventare: il prodotto assembla componenti maturi di settore. Il pre-seed compra esecuzione verificabile, non scommesse tecnologiche.</p>
+    <div class="mgrid" style="grid-template-columns:repeat(2,1fr)">
+      <div class="mod" style="min-height:7.5vw"><div class="mi">${icon('cloud')}</div><div class="mt">Web platform cloud-native</div><div class="mb">Applicazione web con profili, back-office giuria e CMS editoriale. Architettura cloud a costi variabili: scala con le edizioni, non pesa sul piano.</div></div>
+      <div class="mod" style="min-height:7.5vw"><div class="mi">${icon('cube')}</div><div class="mt">Pipeline 3D standard</div><div class="mb">Ingestione e validazione degli asset nei formati aperti di settore (glTF), con anteprima e rendering direttamente nel browser.</div></div>
+      <div class="mod" style="min-height:7.5vw"><div class="mi">${icon('play')}</div><div class="mt">Runway come contenuto</div><div class="mb">Il viewer 3D produce anche i formati video per social e media engine: ogni asset caricato è contenuto pronto alla distribuzione.</div></div>
+      <div class="mod" style="min-height:7.5vw"><div class="mi">${icon('shield')}</div><div class="mt">Voting &amp; integrity</div><div class="mb">Meccaniche di voto con controlli anti-frode e ponderazione con la giuria tecnica: la credibilità della selezione è un asset, va protetta.</div></div>
+    </div>
+    <div class="layer" style="margin-top:1vw"><span class="lbar"></span><span class="lnum">Roadmap</span><span class="lh" style="flex:0 0 12vw">MVP · Q1 2027</span><span class="lb">Sviluppo con fornitori esterni dedicati, milestone trimestrali, primo modulo in produzione: onboarding e asset hub.</span></div>
+  </div>
+  ${foot()}
+</section>`);
+
+/* ============ 09 · CREATOR PIPELINE ============ */
+S.push(`
+<section class="slide s-paper">
+  <div class="pad">
+    <div class="khead"><span class="kicker">02 — Prodotto</span><span class="kmeta">La creator pipeline</span></div>
+    <h1 class="title t-md" style="max-width:74%;margin-bottom:.6vw">Il primo asset che si accumula: <span class="accent">la creator pipeline.</span></h1>
+    <p class="sublede" style="margin-bottom:1vw">L'award non consuma i creator che attrae: li trattiene. Edizione dopo edizione, il funnel trasforma candidature in un roster proprietario di talento verificato.</p>
+    <div style="display:flex;gap:3.5vw;align-items:center;flex:1">
+      <div id="funnel" style="flex:0 0 21%;max-height:100%"></div>
+      <div class="rows" style="flex:1">
+        <div class="rrow"><div class="rn">01</div><div class="rh">Ingaggio<span class="rsub">Open call</span></div><div class="rb">Ogni edizione apre una call globale: l'attenzione dell'award è il motore di acquisizione, a costo marginale zero.</div></div>
+        <div class="rrow"><div class="rn">02</div><div class="rh">Qualificazione<span class="rsub">Voto + giuria</span></div><div class="rb">La selezione produce un ranking verificato del talento: chi emerge ha una validazione che vale sul mercato, non solo un premio.</div></div>
+        <div class="rrow"><div class="rn">03</div><div class="rh">Roster<span class="rsub">Inventory</span></div><div class="rb">I creator qualificati restano nella piattaforma: un network pronto per collaborazioni, commissioni dei brand e campagne sponsor.</div></div>
       </div>
-      <div style="flex:0 0 30%;display:flex;flex-direction:column;gap:1.8vw;border-left:1px solid var(--ld);padding-left:2.2vw">
-        <div class="stat"><span class="v accent">€25k</span><span class="l">Digital asset · Y2</span></div>
-        <div class="stat"><span class="v accent">€73k</span><span class="l">Digital asset · Y3</span></div>
+    </div>
+    <p class="close">Un roster verticale di talento verificato non si compra. <span class="accent">Si accumula — ed è questo che lo rende difendibile.</span></p>
+  </div>
+  ${foot()}
+</section>`);
+
+/* ============ 10 · RIGHTS & ASSET LAYER ============ */
+S.push(`
+<section class="slide s-paper">
+  <div class="pad">
+    <div class="khead"><span class="kicker">02 — Prodotto</span><span class="kmeta">Rights &amp; asset layer</span></div>
+    <h1 class="title t-md" style="max-width:76%;margin-bottom:.6vw">Gli asset digitali: <span class="accent">il ricavo che matura nel tempo.</span></h1>
+    <p class="sublede" style="margin-bottom:1.6vw">Ogni edizione produce un archivio di abiti digitali premiati e validati. GFA ne organizza la distribuzione commerciale — con un modello da label, non da marketplace.</p>
+    <div style="display:flex;gap:3.5vw;align-items:flex-start;flex:1">
+      <div class="rows" style="flex:1">
+        <div class="rrow"><div class="rn">01</div><div class="rh">Diritto di distribuzione<span class="rsub">Il modello</span></div><div class="rb">GFA distribuisce gli asset, il copyright resta ai creator. Il rapporto è da label discografica: la piattaforma porta il mercato, il talento mantiene l'opera.</div></div>
+        <div class="rrow"><div class="rn">02</div><div class="rh">Attivazione graduale<span class="rsub">Y2 – Y3</span></div><div class="rb">La monetizzazione parte come voce minore del piano: si costruiscono catalogo, standard e contratti mentre la domanda matura.</div></div>
+        <div class="rrow"><div class="rn">03</div><div class="rh">Publisher deals<span class="rsub">Y4 +</span></div><div class="rb">L'obiettivo a regime: portare gli asset premiati dentro i giochi con accordi diretti con i publisher. Fuori dal piano 3Y, dentro la traiettoria.</div></div>
+      </div>
+      <div style="flex:0 0 26%;display:flex;flex-direction:column;gap:1.6vw;border-left:1px solid var(--ll);padding-left:2.2vw">
+        <div class="stat"><span class="v accent">€25k</span><span class="l">Ricavi digital asset · Y2</span></div>
+        <div class="stat"><span class="v accent">€73k</span><span class="l">Ricavi digital asset · Y3</span></div>
         <div class="stat"><span class="v">65/35</span><span class="l">Revenue share · creator / GFA</span></div>
       </div>
     </div>
-    <p class="close">Costruito ora. <span class="accent">Monetizzato quando il mercato sarà pronto.</span></p>
+    <p class="close">Si costruisce ora, si monetizza quando il mercato è pronto. <span class="accent">È un'opzione, non una scommessa.</span></p>
   </div>
   ${foot()}
 </section>`);
 
-/* ---- 09 · MILANO × MOMENTO ---- */
-S.push(`
-<section class="slide s-ink">
-  <span class="sym-bleed" style="right:-7%;top:-14%;width:30%;opacity:.92">${markStepped('#1B2BFF')}</span>
-  <div class="pad" style="justify-content:center">
-    <span class="kicker" style="margin-bottom:1.6vw">03 — Defensibility · Manifesto</span>
-    <h1 class="title t-lg" style="max-width:80%">Milano è l'unico posto.<br>Ora è <span class="accent">l'unico momento.</span></h1>
-    <div style="display:flex;gap:2vw;margin-top:2.4vw;max-width:82%">
-      <div class="layer vcol" style="flex:1"><span class="lbar"></span><span class="lnum">Perché Milano</span><span class="lb">Capitale europea della moda, ecosistema istituzionale concentrato, autorevolezza culturale internazionale. Dialogo in corso con Polimoda e Camera della Moda, in fase di formalizzazione.</span></div>
-      <div class="layer vcol" style="flex:1"><span class="lbar"></span><span class="lnum">Perché ora</span><span class="lb">La convergenza moda × gaming × creator è al punto in cui il mercato cerca un riferimento culturale. Chi lo presidia per primo definisce la categoria.</span></div>
-    </div>
-    <p class="close" style="margin-top:2.2vw">Milano come ancora culturale. <span class="accent">Ora come finestra strategica.</span></p>
-  </div>
-  ${foot()}
-</section>`);
-
-/* ---- 10 · ECOSISTEMA ---- */
+/* ============ 11 · IL MERCATO ============ */
 S.push(`
 <section class="slide s-paper">
   <div class="pad">
-    <div class="khead"><span class="kicker">03 — Defensibility</span><span class="kmeta">L'ecosistema</span></div>
-    <h1 class="title t-sm" style="margin-bottom:.4vw">GFA al centro di un <span class="accent">ecosistema verticale.</span></h1>
-    <div class="eco"><div id="ecoDiagram" style="width:100%;height:100%"></div></div>
-  </div>
-  ${foot('Gaming Fashion Awards · stato dei nodi: dialogo, scoping o pipeline')}
-</section>`);
-
-/* ---- 11 · MERCATO ---- */
-S.push(`
-<section class="slide s-ink">
-  <div class="pad">
-    <div class="khead"><span class="kicker">03 — Defensibility</span><span class="kmeta">Il mercato</span></div>
-    <h1 class="title t-sm" style="max-width:78%">Un mercato grande. Una nicchia <span class="accent">tutta da costruire.</span></h1>
+    <div class="khead"><span class="kicker">03 — Mercato</span><span class="kmeta">Dimensione</span></div>
+    <h1 class="title t-md" style="max-width:80%;margin-bottom:.4vw">Un mercato grande, misurabile, <span class="accent">senza presidio.</span></h1>
     <div style="display:flex;align-items:center;gap:4vw;flex:1">
-      <div id="tamring" style="position:relative;width:23vw;height:23vw;flex:0 0 auto"></div>
-      <div style="flex:1;display:flex;flex-direction:column;gap:1.5vw;max-width:50%">
-        <div><div class="mono" style="font-size:.82vw;letter-spacing:.18em;color:var(--cobalt);text-transform:uppercase">TAM — Il gaming globale</div><div class="body" style="margin-top:.3vw"><strong>~$190B di mercato annuo</strong>, oltre 3 miliardi di giocatori. La piattaforma culturale più grande del pianeta.</div></div>
-        <div><div class="mono" style="font-size:.82vw;letter-spacing:.18em;color:var(--cobalt);text-transform:uppercase">SAM — Identità digitale in-game</div><div class="body" style="margin-top:.3vw"><strong>$40B+ l'anno</strong> in skin e cosmetici: è già il più grande mercato di moda digitale esistente — senza un'infrastruttura culturale che lo presidi.</div></div>
-        <div><div class="mono" style="font-size:.82vw;letter-spacing:.18em;color:var(--cobalt);text-transform:uppercase">SOM — Il piano 3Y</div><div class="body" style="margin-top:.3vw"><strong>€1,0M di ricavi al Y3</strong>: quota conservativa, costruita su sponsor pipeline e partnership istituzionali Milano-first.</div></div>
+      <div id="tamring" style="position:relative;width:21vw;height:21vw;flex:0 0 auto"></div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:1.4vw;max-width:54%">
+        <div><div class="mono" style="font-size:.8vw;letter-spacing:.18em;color:var(--cobalt);text-transform:uppercase;font-weight:700">TAM — Il gaming globale</div><div class="body" style="margin-top:.3vw"><strong>~$190 miliardi di mercato annuo</strong> e oltre 3 miliardi di giocatori: la più grande piattaforma culturale del pianeta, dove la Gen Z passa il proprio tempo.</div></div>
+        <div><div class="mono" style="font-size:.8vw;letter-spacing:.18em;color:var(--cobalt);text-transform:uppercase;font-weight:700">SAM — La moda dentro il gaming</div><div class="body" style="margin-top:.3vw"><strong>$40+ miliardi l'anno</strong> in skin e cosmetici in-game: è già oggi il più grande mercato di moda digitale esistente — e non ha né istituzioni né infrastruttura.</div></div>
+        <div><div class="mono" style="font-size:.8vw;letter-spacing:.18em;color:var(--cobalt);text-transform:uppercase;font-weight:700">SOM — Il piano 3Y</div><div class="body" style="margin-top:.3vw"><strong>€1,0M di ricavi al terzo anno</strong>: una quota deliberatamente conservativa, costruita su sponsorship e partnership — non su ipotesi di consumo.</div></div>
       </div>
     </div>
-    <p class="close">Non rivendichiamo un mercato: <span class="accent">lo apriamo.</span></p>
+    <p class="close">La domanda esiste già. <span class="accent">Quello che manca è chi la organizza.</span></p>
   </div>
   ${foot('Stime su fonti pubbliche (Newzoo, GWI) e piano WDA · da validare')}
 </section>`);
 
-/* ---- 12 · POSIZIONAMENTO ---- */
+/* ============ 12 · IL TARGET ============ */
 S.push(`
 <section class="slide s-paper">
   <div class="pad">
-    <div class="khead"><span class="kicker">03 — Defensibility</span><span class="kmeta">Posizionamento competitivo</span></div>
-    <h1 class="title t-sm" style="margin-bottom:1vw">Da premio a infrastruttura: <span class="accent">tre vettori.</span></h1>
-    <div style="display:flex;gap:3vw;flex:1;align-items:stretch">
-      <div id="posMap" style="flex:0 0 40%"></div>
-      <div class="rows" style="flex:1;justify-content:center">
-        <div class="rrow"><div class="rn">01</div><div class="rh">Milano</div><div class="rb">Ancora culturale: autorevolezza istituzionale e lancio dentro Milan Fashion Week 2027.</div></div>
-        <div class="rrow"><div class="rn">02</div><div class="rh">Creator pipeline</div><div class="rb">Asset cumulativo proprietario, non replicabile da chi resta in logica di evento annuale.</div></div>
-        <div class="rrow"><div class="rn">03</div><div class="rh">Rights &amp; asset</div><div class="rb">Framework di distribuzione: l'optionality di lungo periodo che nessun award show possiede.</div></div>
-      </div>
+    <div class="khead"><span class="kicker">03 — Mercato</span><span class="kmeta">Il target</span></div>
+    <h1 class="title t-md" style="margin-bottom:.6vw">Tre pubblici, <span class="accent">un solo sistema.</span></h1>
+    <p class="sublede" style="margin-bottom:1.8vw">Il modello funziona perché ognuno dei tre pubblici ottiene qualcosa che oggi non ha — e uno dei tre lo paga volentieri.</p>
+    <div class="mgrid">
+      <div class="mod" style="min-height:11vw"><div class="mk-tag">Chi paga</div><div class="mt" style="margin-top:.4vw">Brand &amp; sponsor</div><div class="mb">Fashion, luxury, beauty e tech che cercano la Gen Z dove passa il tempo. Oggi entrano nel gaming con esperimenti one-off e costosi; GFA offre un canale ricorrente, misurabile e culturalmente credibile.</div><div class="mk-tag" style="margin-top:auto">→ Sponsorship: il driver del piano</div></div>
+      <div class="mod" style="min-height:11vw"><div class="mk-tag">Chi crea</div><div class="mt" style="margin-top:.4vw">Creator &amp; designer 3D</div><div class="mb">Una community globale in crescita, con strumenti professionali e nessun canale di legittimazione. GFA offre ciò che cercano: visibilità, validazione di settore e accesso ai brand.</div><div class="mk-tag" style="margin-top:auto">→ Revenue share 65/35 a loro favore</div></div>
+      <div class="mod" style="min-height:11vw"><div class="mk-tag">Chi partecipa</div><div class="mt" style="margin-top:.4vw">Audience gaming</div><div class="mb">Gamer Gen Z e Millennial già abituati a comprare identità digitale e a seguire i creator. Il voto li rende parte della selezione — e un'audience profilata per gli sponsor.</div><div class="mk-tag" style="margin-top:auto">→ $40B+ già spesi ogni anno in skin</div></div>
     </div>
-    <p class="close">Gli altri organizzano premi. <span class="accent">Noi costruiamo infrastruttura.</span></p>
+    <p class="close" style="margin-top:auto">Il target non va educato. <span class="accent">Va solo messo nella stessa stanza.</span></p>
   </div>
   ${foot()}
 </section>`);
 
-/* ---- 13 · BUSINESS MODEL ---- */
+/* ============ 13 · POSIZIONAMENTO ============ */
 S.push(`
-<section class="slide s-ink">
+<section class="slide s-paper">
   <div class="pad">
-    <div class="khead"><span class="kicker">04 — Operations</span><span class="kmeta">Il modello di business</span></div>
-    <h1 class="title t-sm" style="max-width:80%;margin-bottom:1.2vw">Sponsorship-led, con linee complementari <span class="accent">in attivazione.</span></h1>
+    <div class="khead"><span class="kicker">03 — Mercato</span><span class="kmeta">Posizionamento competitivo</span></div>
+    <h1 class="title t-sm" style="margin-bottom:1vw">Da premio a infrastruttura: <span class="accent">tre vettori di difendibilità.</span></h1>
+    <div style="display:flex;gap:3vw;flex:1;align-items:stretch">
+      <div id="posMap" style="flex:0 0 40%"></div>
+      <div class="rows" style="flex:1;justify-content:center">
+        <div class="rrow"><div class="rn">01</div><div class="rh">Credibilità fashion<span class="rsub">Il lancio</span></div><div class="rb">Il debutto dentro la Milan Fashion Week dà al premio un'autorevolezza che nessun award gaming-native può replicare.</div></div>
+        <div class="rrow"><div class="rn">02</div><div class="rh">Creator pipeline<span class="rsub">L'asset</span></div><div class="rb">Il roster cresce a ogni edizione ed è proprietario: chi resta in logica di evento annuale non lo può copiare.</div></div>
+        <div class="rrow"><div class="rn">03</div><div class="rh">Rights &amp; asset layer<span class="rsub">L'opzione</span></div><div class="rb">La distribuzione degli asset è una linea di ricavi che nessun award show possiede — e richiede il network per esistere.</div></div>
+      </div>
+    </div>
+    <p class="close">Gli altri organizzano premi. <span class="accent">Noi costruiamo l'infrastruttura del settore.</span></p>
+  </div>
+  ${foot()}
+</section>`);
+
+/* ============ 14 · BUSINESS MODEL ============ */
+S.push(`
+<section class="slide s-paper">
+  <div class="pad">
+    <div class="khead"><span class="kicker">04 — Execution</span><span class="kmeta">Il modello di business</span></div>
+    <h1 class="title t-sm" style="max-width:82%;margin-bottom:.5vw">Sponsorship-led oggi, <span class="accent">tre linee di ricavo a regime.</span></h1>
+    <p class="sublede" style="margin-bottom:1.4vw">Si parte dal ricavo più semplice e veloce da chiudere — la sponsorship dell'evento — e si attivano progressivamente le linee di piattaforma.</p>
     <table class="fin">
       <thead><tr><th>Revenue stream</th><th>Y1</th><th>Y2</th><th>Y3</th><th style="text-align:left">Status</th></tr></thead>
       <tbody>
@@ -400,120 +447,137 @@ S.push(`
         <tr><td>Digital asset <span style="opacity:.5">(share 65/35)</span></td><td>—</td><td>€25k</td><td>€73k</td><td style="text-align:left;opacity:.7;font-size:.9vw">Optionality Y2–Y3 · scala Y4+</td></tr>
       </tbody>
     </table>
-    <div style="display:flex;gap:3vw;margin-top:1.8vw">
-      <div class="stat"><span class="v" style="font-size:2.6vw">100%</span><span class="l">Mix ricavi Y1 · solo sponsorship</span></div>
-      <div class="stat"><span class="v" style="font-size:2.6vw">~90%</span><span class="l">Sponsorship sul mix Y3 · linee nuove in crescita</span></div>
-      <div class="stat"><span class="v accent" style="font-size:2.6vw">Y4+</span><span class="l">Accordi diretti publisher · fuori dal piano 3Y</span></div>
+    <div style="display:flex;gap:3vw;margin-top:1.6vw">
+      <div class="stat"><span class="v" style="font-size:2.4vw">100%</span><span class="l">Mix ricavi Y1 · solo sponsorship</span></div>
+      <div class="stat"><span class="v" style="font-size:2.4vw">~90%</span><span class="l">Sponsorship sul mix Y3 · linee nuove in crescita</span></div>
+      <div class="stat"><span class="v accent" style="font-size:2.4vw">Y4+</span><span class="l">Accordi diretti publisher · fuori dal piano 3Y</span></div>
     </div>
-    <p class="close" style="margin-top:auto">Driver semplice oggi. <span class="accent">Mix diversificato domani.</span></p>
+    <p class="close" style="margin-top:auto">Un driver semplice finanzia il sistema. <span class="accent">Il sistema diversifica il mix.</span></p>
   </div>
   ${foot()}
 </section>`);
 
-/* ---- 14 · ROADMAP ---- */
+/* ============ 15 · GO-TO-MARKET ============ */
 S.push(`
 <section class="slide s-paper">
   <div class="pad">
-    <div class="khead"><span class="kicker">04 — Operations</span><span class="kmeta">Roadmap to launch &amp; beyond</span></div>
-    <h1 class="title t-sm" style="max-width:80%">Dalla costituzione al lancio dentro <span class="accent">Milan Fashion Week.</span></h1>
-    <div id="roadmap" style="flex:1;display:flex;align-items:center"></div>
-    <p class="close">Una roadmap ancorata a una data: <span class="accent">settembre 2027, Milano.</span></p>
+    <div class="khead"><span class="kicker">04 — Execution</span><span class="kmeta">Go-to-market</span></div>
+    <h1 class="title t-md" style="max-width:80%;margin-bottom:.6vw">Globale by design. <span class="accent">Milano come rampa di lancio.</span></h1>
+    <p class="sublede" style="margin-bottom:1.8vw">Il prodotto non ha geografia: creator, voto e contenuti sono online dal primo giorno. La scelta di Milano non è un perimetro — è una leva di credibilità.</p>
+    <div style="display:flex;gap:1.4vw">
+      <div class="layer vcol" style="flex:1"><span class="lbar"></span><span class="lnum">La piattaforma</span><span class="lh">Globale dal giorno uno</span><span class="lb">Call internazionale, piattaforma in inglese, audience worldwide: il mercato di riferimento è il gaming, che non ha confini.</span></div>
+      <div class="layer vcol" style="flex:1"><span class="lbar"></span><span class="lnum">Il lancio</span><span class="lh">Milano, lo starting point</span><span class="lb">Il debutto dentro la Milan Fashion Week 2027 compra in una notte la credibilità fashion che altrove richiederebbe anni. Dialoghi istituzionali in corso, in fase di formalizzazione.</span></div>
+      <div class="layer vcol" style="flex:1"><span class="lbar"></span><span class="lnum">La scala</span><span class="lh">Le prossime capitali</span><span class="lb">Edizioni Paris e New York in valutazione dal 2029 — fuori dal piano 3Y, dentro l'ambizione del progetto.</span></div>
+    </div>
+    <p class="close" style="margin-top:auto">Si parte da dove la moda ha più autorevolezza. <span class="accent">Si cresce dove il gaming è già ovunque.</span></p>
   </div>
   ${foot()}
 </section>`);
 
-/* ---- 15 · FINANCIALS ---- */
+/* ============ 16 · ROADMAP ============ */
 S.push(`
-<section class="slide s-ink">
+<section class="slide s-paper">
   <div class="pad">
-    <div class="khead"><span class="kicker">04 — Operations</span><span class="kmeta">3Y financial highlights</span></div>
-    <h1 class="title t-sm" style="max-width:78%;margin-bottom:1vw">Tre anni: dal pre-revenue al <span class="accent">break-even operativo.</span></h1>
+    <div class="khead"><span class="kicker">04 — Execution</span><span class="kmeta">Roadmap</span></div>
+    <h1 class="title t-sm" style="max-width:80%">Dalla costituzione al lancio: <span class="accent">una roadmap ancorata a una data.</span></h1>
+    <div id="roadmap" style="flex:1;display:flex;align-items:center"></div>
+    <p class="close">Settembre 2027, dentro la fashion week. <span class="accent">Ogni milestone prima di quella data è verificabile.</span></p>
+  </div>
+  ${foot()}
+</section>`);
+
+/* ============ 17 · FINANCIAL HIGHLIGHTS ============ */
+S.push(`
+<section class="slide s-paper">
+  <div class="pad">
+    <div class="khead"><span class="kicker">04 — Execution</span><span class="kmeta">3Y financial highlights</span></div>
+    <h1 class="title t-sm" style="max-width:80%;margin-bottom:.6vw">Tre anni: dal pre-revenue al <span class="accent">break-even operativo.</span></h1>
     <div style="display:flex;gap:3.5vw;flex:1;align-items:center">
-      <div id="revChart" style="flex:0 0 46%;height:82%"></div>
-      <div style="flex:1;display:flex;flex-direction:column;gap:1.6vw">
+      <div id="revChart" style="flex:0 0 44%;height:82%"></div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:1.5vw">
         <div style="display:flex;gap:2.4vw">
           <div class="stat"><span class="v accent">36,9%</span><span class="l">EBITDA margin · Y3</span></div>
           <div class="stat"><span class="v">Y2</span><span class="l">Break-even point</span></div>
         </div>
         <div style="display:flex;gap:2.4vw">
-          <div class="stat"><span class="v" style="font-size:2.6vw">30%</span><span class="l">WACC</span></div>
-          <div class="stat"><span class="v" style="font-size:2.6vw">14x</span><span class="l">EBITDA multiple · TV</span></div>
+          <div class="stat"><span class="v" style="font-size:2.4vw">30%</span><span class="l">WACC</span></div>
+          <div class="stat"><span class="v" style="font-size:2.4vw">14x</span><span class="l">EBITDA multiple · TV</span></div>
         </div>
-        <p class="body" style="opacity:.7;max-width:92%;font-size:.95vw">Ricavi: €120k → €628k → €1,0M. EBITDA: €0,7k → €135k → €369k. Numeri modellati sul piano industriale 3Y.</p>
+        <p class="body" style="opacity:.75;max-width:92%;font-size:.95vw">Ricavi: €120k → €628k → €1,0M. EBITDA: €0,7k → €135k → €369k. La marginalità cresce con le linee di piattaforma, non con i costi dell'evento.</p>
       </div>
     </div>
-    <p class="close">Una marginalità che <span class="accent">cresce con la piattaforma.</span></p>
+    <p class="close">L'evento paga il presente. <span class="accent">La piattaforma costruisce il margine.</span></p>
   </div>
-  ${foot('Gaming Fashion Awards · numeri modellati, da raffinare')}
+  ${foot('Gaming Fashion Awards · piano industriale 3Y, numeri da raffinare')}
 </section>`);
 
-/* ---- 16 · FUNDING ASK ---- */
+/* ============ 18 · THE ASK ============ */
 S.push(`
-<section class="slide s-ink">
-  <span class="sym-bleed" style="right:-8%;bottom:6%;width:21%;opacity:.92">${markStepped('#1B2BFF')}</span>
+<section class="slide s-paper">
   <div class="pad">
-    <div class="khead"><span class="kicker">05 — Ask &amp; Proof</span><span class="kmeta">Funding need &amp; use of funds</span></div>
-    <h1 class="title" style="font-size:7vw;letter-spacing:-.04em"><span class="accent">€500k</span></h1>
-    <p class="subhead" style="margin-top:.4vw;max-width:58%;color:var(--md)">Pre-seed per portare la piattaforma allo stadio di MVP operativo e arrivare al lancio, con le interlocuzioni istituzionali formalizzate.</p>
-    <div style="display:flex;gap:1.4vw;margin-top:2.2vw;max-width:88%">
-      <div class="layer vcol" style="flex:1"><span class="lbar"></span><span class="lnum">Primary use · ~60%</span><span class="lh">Platform development</span><span class="lb">IT, R&amp;D, build dell'MVP, UX/UI, virtual runway, asset architecture.</span></div>
-      <div class="layer vcol" style="flex:1"><span class="lbar"></span><span class="lnum">Secondary · ~40%</span><span class="lh">Media, operations &amp; legal</span><span class="lb">Impianto editoriale, PR, community e struttura. Allocazione indicativa, agganciata alle milestone Y0.</span></div>
-      <div class="layer vcol" style="flex:1"><span class="lbar"></span><span class="lnum">Deal terms</span><span class="lh">~€2,5M pre-money</span><span class="lb">Post-money ~€3,0M · equity ceduta ~15–20%.</span></div>
+    <div class="khead"><span class="kicker">05 — The ask</span><span class="kmeta">Funding need &amp; use of funds</span></div>
+    <h1 class="title" style="font-size:6.4vw;letter-spacing:-.04em"><span class="accent">€500k</span> <span style="font-size:2vw;font-weight:800;letter-spacing:-.01em">pre-seed</span></h1>
+    <p class="sublede" style="margin-top:.4vw;max-width:60ch">Un round con un perimetro preciso: portare la piattaforma all'MVP operativo, formalizzare le partnership istituzionali e arrivare al lancio di settembre 2027 con la sponsor pipeline avviata.</p>
+    <div style="display:flex;gap:1.4vw;margin-top:1.8vw">
+      <div class="layer vcol" style="flex:1"><span class="lbar"></span><span class="lnum">Primary use · ~60%</span><span class="lh">Platform development</span><span class="lb">IT e R&amp;D: build dell'MVP, UX/UI, virtual runway, pipeline 3D e asset architecture.</span></div>
+      <div class="layer vcol" style="flex:1"><span class="lbar"></span><span class="lnum">Secondary · ~40%</span><span class="lh">Media, operations &amp; legal</span><span class="lb">Impianto editoriale, PR, community e struttura. Allocazione indicativa, agganciata alle milestone del Year 0.</span></div>
+      <div class="layer vcol" style="flex:1"><span class="lbar"></span><span class="lnum">Deal terms</span><span class="lh">~€2,5M pre-money</span><span class="lb">Post-money ~€3,0M · equity ceduta ~15–20%. Round seed successivo subordinato alle milestone Y0.</span></div>
     </div>
     <p class="close" style="margin-top:auto">Il pre-seed compra <span class="accent">milestone verificabili</span>, non promesse.</p>
   </div>
   ${foot()}
 </section>`);
 
-/* ---- 17 · YEAR 0 ---- */
-S.push(`
-<section class="slide s-ink">
-  <div class="pad">
-    <div class="khead"><span class="kicker">05 — Ask &amp; Proof</span><span class="kmeta">Year 0 proof points</span></div>
-    <h1 class="title t-lg">Cosa dimostriamo nel <span class="accent">Year 0.</span></h1>
-    <div class="rows" style="margin-top:1.8vw">
-      <div class="rrow"><div class="rn">01</div><div class="rb" style="font-size:1.15vw;opacity:1">MVP operativo della piattaforma entro il <strong>Q1 2027</strong>.</div></div>
-      <div class="rrow"><div class="rn">02</div><div class="rb" style="font-size:1.15vw;opacity:1">Interlocuzioni istituzionali <strong>formalizzate</strong> con le realtà oggi in dialogo.</div></div>
-      <div class="rrow"><div class="rn">03</div><div class="rb" style="font-size:1.15vw;opacity:1">Sponsor pipeline strutturata, con le <strong>prime conversazioni qualificate</strong> avviate.</div></div>
-      <div class="rrow"><div class="rn">04</div><div class="rb" style="font-size:1.15vw;opacity:1">Brand identity finalizzata e impianto editoriale del <strong>media engine</strong>.</div></div>
-      <div class="rrow"><div class="rn">05</div><div class="rb" style="font-size:1.15vw;opacity:1">Roadmap operativa per il <strong>lancio di settembre 2027</strong>.</div></div>
-    </div>
-    <p class="close" style="margin-top:auto">Year 0 è dove il progetto smette di essere un'idea e <span class="accent">diventa infrastruttura.</span></p>
-  </div>
-  ${foot()}
-</section>`);
-
-/* ---- 18 · TEAM ---- */
+/* ============ 19 · YEAR 0 ============ */
 S.push(`
 <section class="slide s-paper">
   <div class="pad">
-    <div class="khead"><span class="kicker">05 — Ask &amp; Proof</span><span class="kmeta">Team &amp; advisor</span></div>
-    <h1 class="title t-md" style="margin-bottom:1.6vw">Un team snello. <span class="accent">Advisor di riferimento.</span></h1>
-    <div class="mgrid" style="grid-template-columns:repeat(4,1fr)">
-      <div class="mod"><div class="mk-tag">Team operativo</div><div class="mt">Chairman · CEO</div><div class="mb">Struttura interna minima, costruita per scalare con il round.</div></div>
-      <div class="mod"><div class="mk-tag">Advisor</div><div class="mt">WDA</div><div class="mb">Advisor strategico-finanziario: piano industriale e readiness.</div></div>
-      <div class="mod"><div class="mk-tag">Advisor</div><div class="mt">Andersen</div><div class="mb">Legale — trademark, domini, proprietà intellettuale.</div></div>
-      <div class="mod"><div class="mk-tag">Esecuzione</div><div class="mt">Partner esterni</div><div class="mb">Sviluppo IT, design e PR con fornitori dedicati.</div></div>
+    <div class="khead"><span class="kicker">05 — The ask</span><span class="kmeta">Year 0 proof points</span></div>
+    <h1 class="title t-lg">Cosa dimostriamo <span class="accent">nei primi dodici mesi.</span></h1>
+    <div class="rows" style="margin-top:1.8vw">
+      <div class="rrow"><div class="rn">01</div><div class="rh">Prodotto</div><div class="rb">MVP operativo della piattaforma entro il <strong>Q1 2027</strong>: onboarding, asset hub e virtual runway online.</div></div>
+      <div class="rrow"><div class="rn">02</div><div class="rh">Partnership</div><div class="rb">Interlocuzioni istituzionali <strong>formalizzate</strong> con le realtà oggi in dialogo nel sistema moda.</div></div>
+      <div class="rrow"><div class="rn">03</div><div class="rh">Commerciale</div><div class="rb">Sponsor pipeline strutturata, con le <strong>prime conversazioni qualificate</strong> avviate sui tier Platinum e Gold.</div></div>
+      <div class="rrow"><div class="rn">04</div><div class="rh">Media</div><div class="rb">Brand identity finalizzata e <strong>impianto editoriale del media engine</strong> attivo sui canali.</div></div>
+      <div class="rrow"><div class="rn">05</div><div class="rh">Lancio</div><div class="rb">Macchina operativa pronta per la <strong>prima edizione: settembre 2027</strong>.</div></div>
     </div>
-    <p class="close" style="margin-top:auto">Struttura volutamente lean: <span class="accent">il capitale va sul prodotto.</span></p>
+    <p class="close" style="margin-top:auto">Il Year 0 è dove il progetto smette di essere un'idea e <span class="accent">diventa un'azienda misurabile.</span></p>
   </div>
   ${foot()}
 </section>`);
 
-/* ---- 19 · CLOSING ---- */
+/* ============ 20 · TEAM ============ */
+S.push(`
+<section class="slide s-paper">
+  <div class="pad">
+    <div class="khead"><span class="kicker">05 — The ask</span><span class="kmeta">Team &amp; advisor</span></div>
+    <h1 class="title t-md" style="margin-bottom:.6vw">Struttura lean, <span class="accent">competenze dove servono.</span></h1>
+    <p class="sublede" style="margin-bottom:1.8vw">Il capitale del round va sul prodotto, non sulla struttura: il team interno resta minimo e si appoggia ad advisor e partner di esecuzione dedicati.</p>
+    <div class="mgrid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="mod"><div class="mk-tag">Team operativo</div><div class="mt">Chairman · CEO</div><div class="mb">Direzione strategica e commerciale; struttura interna costruita per scalare con il round.</div></div>
+      <div class="mod"><div class="mk-tag">Advisor</div><div class="mt">WDA</div><div class="mb">Advisory strategico-finanziaria: piano industriale, readiness e processo di funding.</div></div>
+      <div class="mod"><div class="mk-tag">Advisor</div><div class="mt">Andersen</div><div class="mb">Presidio legale: trademark, domini e proprietà intellettuale del sistema GFA.</div></div>
+      <div class="mod"><div class="mk-tag">Esecuzione</div><div class="mt">Partner dedicati</div><div class="mb">Sviluppo IT, design e PR con fornitori esterni specializzati, su milestone contrattualizzate.</div></div>
+    </div>
+    <p class="close" style="margin-top:auto">Ogni euro del round ha una destinazione: <span class="accent">il prodotto e il lancio.</span></p>
+  </div>
+  ${foot()}
+</section>`);
+
+/* ============ 21 · CLOSING ============ */
 S.push(`
 <section class="slide s-ink">
   <div class="pad" style="align-items:center;justify-content:center;text-align:center">
-    <span style="width:13vw;display:block">${markLocked('#1B2BFF','#0B0B0F')}</span>
-    <h1 class="title t-lg" style="margin-top:2.6vw">Organizing the <span class="accent">convergence.</span></h1>
-    <p class="mono" style="margin-top:1.8vw;font-size:.95vw;letter-spacing:.22em;text-transform:uppercase;color:var(--md)">Pre-seed €500k · MVP Q1 2027 · Lancio settembre 2027 · Milano</p>
+    <span style="width:11vw;display:block">${markLocked('#1B2BFF','#0B0B0F')}</span>
+    <h1 class="title t-lg" style="margin-top:2.6vw;color:var(--paper)">Organizing the convergence<span class="accent">.</span></h1>
+    <p class="mono" style="margin-top:1.8vw;font-size:.92vw;letter-spacing:.22em;text-transform:uppercase;color:var(--md)">Pre-seed €500k · MVP Q1 2027 · Lancio settembre 2027</p>
   </div>
   ${foot('Gaming Fashion Awards srl · Milano')}
 </section>`);
 
-/* ---- 20 · A1 FINANCIAL SUMMARY ---- */
+/* ============ 22 · APPENDIX A1 — MODELLO FINANZIARIO ============ */
 S.push(`
-<section class="slide s-ink">
+<section class="slide s-paper">
   <div class="pad">
     <div class="khead"><span class="kicker">Appendix</span><span class="kmeta">A1 · Financial model summary</span></div>
     <h1 class="title t-sm" style="margin-bottom:1vw">Sintesi del <span class="accent">modello finanziario 3Y.</span></h1>
@@ -530,61 +594,35 @@ S.push(`
           <tr><td>Break-even</td><td>—</td><td style="color:var(--cobalt);font-weight:800">✓</td><td>—</td></tr>
         </tbody>
       </table>
-      <div style="flex:0 0 28%;display:flex;flex-direction:column;gap:1.6vw;border-left:1px solid var(--ld);padding-left:2.2vw;padding-top:.5vw">
-        <div class="mono" style="font-size:.78vw;letter-spacing:.18em;text-transform:uppercase;color:var(--cobalt)">Parametri di valutazione</div>
-        <div class="stat"><span class="v" style="font-size:2.6vw">30%</span><span class="l">WACC</span></div>
-        <div class="stat"><span class="v" style="font-size:2.6vw">14x</span><span class="l">EBITDA multiple · TV</span></div>
-        <div class="stat"><span class="v accent" style="font-size:2.6vw">€500k</span><span class="l">Round target pre-seed</span></div>
+      <div style="flex:0 0 26%;display:flex;flex-direction:column;gap:1.5vw;border-left:1px solid var(--ll);padding-left:2.2vw;padding-top:.5vw">
+        <div class="mono" style="font-size:.78vw;letter-spacing:.18em;text-transform:uppercase;color:var(--cobalt);font-weight:700">Parametri di valutazione</div>
+        <div class="stat"><span class="v" style="font-size:2.4vw">30%</span><span class="l">WACC</span></div>
+        <div class="stat"><span class="v" style="font-size:2.4vw">14x</span><span class="l">EBITDA multiple · TV</span></div>
+        <div class="stat"><span class="v accent" style="font-size:2.4vw">€500k</span><span class="l">Round target pre-seed</span></div>
       </div>
     </div>
   </div>
-  ${foot('Fonte: GFA piano industriale 3Y')}
+  ${foot('Fonte: GFA piano industriale 3Y · Confidential')}
 </section>`);
 
-/* ---- 21 · A2 RISK ---- */
+/* ============ 23 · APPENDIX A2 — GRAFICI ============ */
 S.push(`
 <section class="slide s-paper">
   <div class="pad">
-    <div class="khead"><span class="kicker">Appendix</span><span class="kmeta">A2 · Risk factors &amp; mitigation</span></div>
-    <h1 class="title t-sm" style="margin-bottom:.8vw">Rischi mappati e <span class="accent">strategie di mitigazione.</span></h1>
-    <table class="fin" style="font-size:.9vw">
-      <thead><tr><th style="width:34%">Rischio</th><th style="text-align:left">Mitigazione</th></tr></thead>
-      <tbody>
-        <tr><td style="vertical-align:top;font-weight:700;font-size:.95vw;text-align:left">Frame "award show"</td><td style="text-align:left;opacity:.82;line-height:1.38;font-size:.92vw">Frame strategico media-tech, comunicato e ripetuto in tutto il deck e in ogni interazione di mercato.</td></tr>
-        <tr><td style="vertical-align:top;font-weight:700;font-size:.95vw;text-align:left">Concentrazione ricavi Y1</td><td style="text-align:left;opacity:.82;line-height:1.38;font-size:.92vw">Apertura progressiva di linee complementari (organic media Y2, digital asset Y2–Y3) e accordi publisher Y4+.</td></tr>
-        <tr><td style="vertical-align:top;font-weight:700;font-size:.95vw;text-align:left">Esecuzione MVP</td><td style="text-align:left;opacity:.82;line-height:1.38;font-size:.92vw">Partner tecnologici in scoping, sviluppo IT con fornitori esterni dedicati, milestone trimestrali.</td></tr>
-        <tr><td style="vertical-align:top;font-weight:700;font-size:.95vw;text-align:left">Partnership non formalizzate</td><td style="text-align:left;opacity:.82;line-height:1.38;font-size:.92vw">Dialogo istituzionale già avviato; formalizzazione attesa come proof point del Year 0.</td></tr>
-        <tr><td style="vertical-align:top;font-weight:700;font-size:.95vw;text-align:left">Competitor sul piano "award"</td><td style="text-align:left;opacity:.82;line-height:1.38;font-size:.92vw">Differenziazione su tre vettori: Milano, creator pipeline, asset layer. Da premio a infrastruttura.</td></tr>
-        <tr><td style="vertical-align:top;font-weight:700;font-size:.95vw;text-align:left">Valuation in consolidamento</td><td style="text-align:left;opacity:.82;line-height:1.38;font-size:.92vw">Round seed successivo subordinato a milestone Y0 verificabili.</td></tr>
-      </tbody>
-    </table>
-  </div>
-  ${foot('Gaming Fashion Awards · WDA strategic readiness')}
-</section>`);
-
-/* ---- 22 · A3 NOTES ---- */
-S.push(`
-<section class="slide s-ink">
-  <div class="pad">
-    <div class="khead"><span class="kicker">Appendix</span><span class="kmeta">A3 · Notes on assumptions</span></div>
-    <h1 class="title t-sm" style="margin-bottom:1.4vw">Note sulle <span class="accent">assunzioni del piano.</span></h1>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.1vw 3.5vw">
-      <div><div style="font-weight:800;font-size:1.05vw;color:var(--cobalt)">Capital structure</div><div class="body" style="font-size:.9vw;margin-top:.3vw;opacity:.84">Round €500k pre-seed. Allineamento tra capital injection e cashflow in riconciliazione nella prossima versione del financial plan.</div></div>
-      <div><div style="font-weight:800;font-size:1.05vw;color:var(--cobalt)">Revenue model</div><div class="body" style="font-size:.9vw;margin-top:.3vw;opacity:.84">Modellato sul pricing attuale (tier Platinum e Gold, RPM €1,50, share 65/35); raffinato con il consolidamento della pipeline.</div></div>
-      <div><div style="font-weight:800;font-size:1.05vw;color:var(--cobalt)">Valuation</div><div class="body" style="font-size:.9vw;margin-top:.3vw;opacity:.84">Pre-money e post-money modellati; consolidati nel processo di chiusura del round.</div></div>
-      <div><div style="font-weight:800;font-size:1.05vw;color:var(--cobalt)">Espansione internazionale</div><div class="body" style="font-size:.9vw;margin-top:.3vw;opacity:.84">Edizioni Paris e NY parte della valutazione di scalabilità: non incluse nel piano 3Y.</div></div>
-      <div><div style="font-weight:800;font-size:1.05vw;color:var(--cobalt)">Asset distribution</div><div class="body" style="font-size:.9vw;margin-top:.3vw;opacity:.84">Accordi diretti con i gaming publisher: optionality Y4+, non modellati nelle proiezioni 3Y.</div></div>
-      <div><div style="font-weight:800;font-size:1.05vw;color:var(--cobalt)">Partnership</div><div class="body" style="font-size:.9vw;margin-top:.3vw;opacity:.84">Interlocuzioni con Polimoda e Camera della Moda in corso. Altre categorie in scoping o pipeline strutturata.</div></div>
-    </div>
-    <div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between">
-      <p class="close" style="font-size:1.7vw">Organizing the convergence.<br><span class="accent">Built in Milano.</span></p>
-      <div style="display:flex;align-items:center;gap:1.4vw;padding-bottom:.4vw">
-        <span style="width:5vw;display:block">${markStepped('#F1EEE6')}</span>
-        <span style="font-weight:900;font-size:1.5vw;letter-spacing:-.03em;text-transform:uppercase;line-height:.88">Gaming<br>Fashion<br>Awards<span class="accent">.</span></span>
+    <div class="khead"><span class="kicker">Appendix</span><span class="kmeta">A2 · Revenue mix &amp; marginalità</span></div>
+    <h1 class="title t-sm" style="margin-bottom:1.2vw">Mix di ricavo e <span class="accent">progressione del margine.</span></h1>
+    <div style="display:flex;gap:4vw;flex:1;align-items:center">
+      <div style="flex:1;display:flex;flex-direction:column;gap:.8vw;height:100%">
+        <div class="mono" style="font-size:.78vw;letter-spacing:.16em;text-transform:uppercase;color:var(--cobalt);font-weight:700">Ricavi per linea · €k</div>
+        <div id="mixChart" style="flex:1"></div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:.8vw;height:100%">
+        <div class="mono" style="font-size:.78vw;letter-spacing:.16em;text-transform:uppercase;color:var(--cobalt);font-weight:700">EBITDA margin · %</div>
+        <div id="marginChart" style="flex:1"></div>
       </div>
     </div>
   </div>
-  ${foot('Gaming Fashion Awards srl · Milano')}
+  ${foot('Fonte: GFA piano industriale 3Y · Confidential')}
 </section>`);
 
 /* ============ render ============ */
@@ -594,11 +632,11 @@ document.getElementById('stage').innerHTML = S.join('');
 function buildDiagrams(){
   /* convergenza: venn a triangolo → il marchio */
   var cd=document.getElementById('convDiagram');
-  if(cd){cd.innerHTML='<svg viewBox="0 0 980 430" width="62vw" style="max-width:1150px" xmlns="http://www.w3.org/2000/svg">'
+  if(cd){cd.innerHTML='<svg viewBox="0 0 980 430" width="58vw" style="max-width:1100px" xmlns="http://www.w3.org/2000/svg">'
     +'<g font-family="Space Mono" font-size="14" letter-spacing="2" font-weight="700" fill="#0B0B0F">'
-    +'<circle cx="195" cy="165" r="92" fill="none" stroke="#0B0B0F" stroke-opacity=".3" stroke-width="1.5"/>'
-    +'<circle cx="315" cy="165" r="92" fill="none" stroke="#0B0B0F" stroke-opacity=".3" stroke-width="1.5"/>'
-    +'<circle cx="255" cy="265" r="92" fill="none" stroke="#0B0B0F" stroke-opacity=".3" stroke-width="1.5"/>'
+    +'<circle cx="195" cy="165" r="92" fill="none" stroke="#0B0B0F" stroke-opacity=".32" stroke-width="1.5"/>'
+    +'<circle cx="315" cy="165" r="92" fill="none" stroke="#0B0B0F" stroke-opacity=".32" stroke-width="1.5"/>'
+    +'<circle cx="255" cy="265" r="92" fill="none" stroke="#0B0B0F" stroke-opacity=".32" stroke-width="1.5"/>'
     +'<text x="150" y="52" text-anchor="middle">MODA DIGITALE</text>'
     +'<text x="362" y="52" text-anchor="middle">GAMING</text>'
     +'<text x="255" y="392" text-anchor="middle">CREATOR ECONOMY</text>'
@@ -606,78 +644,39 @@ function buildDiagrams(){
     +'<path d="M500 215 H580" stroke="#1B2BFF" stroke-width="2.5" fill="none"/><path d="M572 206 L586 215 572 224 Z" fill="#1B2BFF" stroke="none"/>'
     +'</g>'
     +markPaths(760,215,110,'#1B2BFF')
-    +'<text x="760" y="385" text-anchor="middle" font-family="Space Mono" font-size="14" letter-spacing="2" font-weight="700" fill="#1B2BFF">UN SOLO TERRITORIO</text>'
+    +'<text x="760" y="385" text-anchor="middle" font-family="Space Mono" font-size="14" letter-spacing="2" font-weight="700" fill="#1B2BFF">UN NUOVO MERCATO</text>'
     +'</svg>';}
 
-  /* funnel — simmetrico, tre fasi */
+  /* funnel — solo numeri di fase dentro, le descrizioni stanno nelle righe a destra */
   var fn=document.getElementById('funnel');
-  if(fn){fn.innerHTML='<svg viewBox="0 0 200 220" width="100%" xmlns="http://www.w3.org/2000/svg">'
-    +'<path d="M20 12 H180 L122 200 H78 Z" fill="none" stroke="#0B0B0F" stroke-opacity=".28" stroke-width="1.5"/>'
-    +'<rect x="20" y="10" width="160" height="3.5" fill="#1B2BFF"/>'
-    +'<path d="M39 74 H161" stroke="#0B0B0F" stroke-opacity=".28" stroke-width="1.5"/>'
-    +'<path d="M58 136 H142" stroke="#0B0B0F" stroke-opacity=".28" stroke-width="1.5"/>'
-    +'<g font-family="Space Mono" font-size="12" letter-spacing="2" text-anchor="middle" fill="#0B0B0F">'
-    +'<text x="100" y="48">INGAGGIO</text>'
-    +'<text x="100" y="110">SELEZIONE</text>'
-    +'<text x="100" y="174" fill="#1B2BFF" font-weight="700">INVENTORY</text>'
+  if(fn){fn.innerHTML='<svg viewBox="0 0 220 240" width="100%" xmlns="http://www.w3.org/2000/svg">'
+    +'<path d="M20 12 H200 L130 228 H90 Z" fill="none" stroke="#0B0B0F" stroke-opacity=".3" stroke-width="1.5"/>'
+    +'<rect x="20" y="10" width="180" height="3.5" fill="#1B2BFF"/>'
+    +'<path d="M44 84 H176" stroke="#0B0B0F" stroke-opacity=".3" stroke-width="1.5"/>'
+    +'<path d="M67 156 H153" stroke="#0B0B0F" stroke-opacity=".3" stroke-width="1.5"/>'
+    +'<g font-family="Space Mono" font-size="17" letter-spacing="2" font-weight="700" text-anchor="middle">'
+    +'<text x="110" y="55" fill="#0B0B0F">01</text>'
+    +'<text x="110" y="126" fill="#0B0B0F">02</text>'
+    +'<text x="110" y="198" fill="#1B2BFF">03</text>'
     +'</g></svg>';}
 
-  /* ecosistema radiale — centrato */
-  var eco=document.getElementById('ecoDiagram');
-  if(eco){
-    var cx=450,cy=225,r=155;
-    var nodes=[
-      {n:'Realtà istituzionali',s:'dialogo in corso'},
-      {n:'Fashion & luxury',s:'pipeline strutturata'},
-      {n:'Gaming publisher',s:'scoping Y4+'},
-      {n:'Technology partner',s:'in scoping'},
-      {n:'Media & distribution',s:'operative'},
-      {n:'Creator community',s:'in costruzione'}
-    ];
-    var svg='<svg viewBox="0 0 900 450" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">';
-    nodes.forEach(function(nd,i){
-      var ang=-Math.PI/2+i*(Math.PI/3);
-      var x=cx+Math.cos(ang)*r, y=cy+Math.sin(ang)*r;
-      svg+='<line x1="'+cx+'" y1="'+cy+'" x2="'+x+'" y2="'+y+'" stroke="#0B0B0F" stroke-opacity=".18" stroke-width="1.2"/>';
-    });
-    svg+='<circle cx="'+cx+'" cy="'+cy+'" r="50" fill="#1B2BFF"/>'
-      +'<text x="'+cx+'" y="'+(cy-2)+'" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="24" fill="#F1EEE6">GFA</text>'
-      +'<text x="'+cx+'" y="'+(cy+18)+'" text-anchor="middle" font-family="Space Mono" font-size="9" letter-spacing="3" fill="#F1EEE6">HUB</text>';
-    nodes.forEach(function(nd,i){
-      var ang=-Math.PI/2+i*(Math.PI/3);
-      var x=cx+Math.cos(ang)*r, y=cy+Math.sin(ang)*r;
-      svg+='<circle cx="'+x+'" cy="'+y+'" r="7" fill="#F1EEE6" stroke="#1B2BFF" stroke-width="2.5"/>';
-      var vertical=Math.abs(x-cx)<10;
-      var anchor=vertical?'middle':(x<cx?'end':'start');
-      var tx=vertical?x:(x<cx?x-20:x+20);
-      var nameY, statY;
-      if(vertical && y<cy){ nameY=y-32; statY=y-15; }
-      else if(vertical){ nameY=y+28; statY=y+45; }
-      else { nameY=y-2; statY=y+15; }
-      svg+='<text x="'+tx+'" y="'+nameY+'" text-anchor="'+anchor+'" font-family="Archivo" font-weight="800" font-size="15" fill="#0B0B0F">'+nd.n+'</text>'
-        +'<text x="'+tx+'" y="'+statY+'" text-anchor="'+anchor+'" font-family="Space Mono" font-size="10" letter-spacing="1" fill="#1B2BFF">'+nd.s+'</text>';
-    });
-    svg+='</svg>';
-    eco.innerHTML=svg;
-  }
-
-  /* TAM / SAM / SOM — anelli concentrici */
+  /* TAM / SAM / SOM — anelli concentrici su paper */
   var tr=document.getElementById('tamring');
   if(tr){[
     {w:100,op:.4,lab:'TAM',val:'~$190B'},
-    {w:64,op:.65,lab:'SAM',val:'$40B+'},
+    {w:64,op:.7,lab:'SAM',val:'$40B+'},
     {w:33,op:1,lab:'SOM',val:'€1,0M'}
   ].forEach(function(rg,i){
     var d=document.createElement('div');
     d.style.cssText='position:absolute;border-radius:50%;border:1.5px solid rgba(27,43,255,'+rg.op+');width:'+rg.w+'%;height:'+rg.w+'%;left:'+(50-rg.w/2)+'%;top:'+(50-rg.w/2)+'%;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;';
-    if(i===2){d.style.background='rgba(27,43,255,.18)';d.style.justifyContent='center';}
+    if(i===2){d.style.background='#1B2BFF';d.style.justifyContent='center';}
     var lab=document.createElement('span');
     lab.className='mono';
     lab.textContent=rg.lab;
-    lab.style.cssText='font-size:.72vw;letter-spacing:.18em;color:#1B2BFF;margin-top:'+(i===2?'0':'.55vw')+';font-weight:700;';
+    lab.style.cssText='font-size:.72vw;letter-spacing:.18em;color:'+(i===2?'#F1EEE6':'#1B2BFF')+';margin-top:'+(i===2?'0':'.55vw')+';font-weight:700;';
     var val=document.createElement('span');
     val.textContent=rg.val;
-    val.style.cssText='font-weight:900;font-size:'+(i===2?'1.15vw':'.95vw')+';letter-spacing:-.02em;color:#F1EEE6;margin-top:.1vw;';
+    val.style.cssText='font-weight:900;font-size:'+(i===2?'1.1vw':'.95vw')+';letter-spacing:-.02em;color:'+(i===2?'#F1EEE6':'#0B0B0F')+';margin-top:.1vw;';
     d.appendChild(lab);d.appendChild(val);
     tr.appendChild(d);
   });}
@@ -685,8 +684,8 @@ function buildDiagrams(){
   /* mappa di posizionamento 2×2 */
   var pm=document.getElementById('posMap');
   if(pm){pm.innerHTML='<svg viewBox="0 0 400 340" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">'
-    +'<line x1="52" y1="24" x2="52" y2="292" stroke="#0B0B0F" stroke-opacity=".28" stroke-width="1.5"/>'
-    +'<line x1="52" y1="292" x2="382" y2="292" stroke="#0B0B0F" stroke-opacity=".28" stroke-width="1.5"/>'
+    +'<line x1="52" y1="24" x2="52" y2="292" stroke="#0B0B0F" stroke-opacity=".3" stroke-width="1.5"/>'
+    +'<line x1="52" y1="292" x2="382" y2="292" stroke="#0B0B0F" stroke-opacity=".3" stroke-width="1.5"/>'
     +'<text x="30" y="158" font-family="Space Mono" font-size="10" letter-spacing="1.5" fill="#0B0B0F" transform="rotate(-90 30 158)" text-anchor="middle">INFRASTRUTTURA →</text>'
     +'<text x="217" y="318" font-family="Space Mono" font-size="10" letter-spacing="1.5" fill="#0B0B0F" text-anchor="middle">VERTICALITÀ FASHION × GAMING →</text>'
     +'<g font-family="Space Mono" font-size="9" fill="#0B0B0F" fill-opacity=".55" text-anchor="middle">'
@@ -701,42 +700,42 @@ function buildDiagrams(){
     +'<text x="322" y="50" font-family="Archivo" font-weight="900" font-size="16" fill="#1B2BFF" text-anchor="middle">GFA</text>'
     +'</svg>';}
 
-  /* roadmap — timeline, ancore centrate (niente testo tagliato) */
+  /* roadmap — timeline, ancore centrate */
   var rm=document.getElementById('roadmap');
   if(rm){
     var ms=[['2026 · Y0','Costituzione & build','Società operativa, sviluppo MVP, interlocuzioni istituzionali avviate.'],
-            ['Q1 2027','MVP operativo','Piattaforma online: onboarding, runway, voting.'],
+            ['Q1 2027','MVP operativo','Piattaforma online: onboarding, asset hub, runway.'],
             ['Q2 2027','Pre-lancio','Media engine attivo, teaser, sponsor pipeline.'],
-            ['Set 2027','Lancio ufficiale','Prima edizione dentro Milan Fashion Week.'],
-            ['2028+','Scaling & BEP','Break-even al Y2. 2029+: edizioni Paris / NY.']];
+            ['Set 2027','Lancio · prima edizione','Debutto dentro la Milan Fashion Week.'],
+            ['2028+','Scaling & break-even','BEP al Y2. Dal 2029: edizioni internazionali.']];
     var W=1500,H=320,m=130,step=(W-m*2)/(ms.length-1),y=120;
     var svg='<svg viewBox="0 0 '+W+' '+H+'" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">';
-    svg+='<line x1="'+m+'" y1="'+y+'" x2="'+(W-m)+'" y2="'+y+'" stroke="#0B0B0F" stroke-opacity=".18" stroke-width="1.5"/>';
+    svg+='<line x1="'+m+'" y1="'+y+'" x2="'+(W-m)+'" y2="'+y+'" stroke="#0B0B0F" stroke-opacity=".2" stroke-width="1.5"/>';
     ms.forEach(function(d,i){
       var x=m+step*i;
-      svg+='<circle cx="'+x+'" cy="'+y+'" r="8" fill="'+(i===3?'#1B2BFF':'none')+'" stroke="#1B2BFF" stroke-width="2.5"/>';
+      svg+='<circle cx="'+x+'" cy="'+y+'" r="8" fill="'+(i===3?'#1B2BFF':'#F1EEE6')+'" stroke="#1B2BFF" stroke-width="2.5"/>';
       svg+='<text x="'+x+'" y="'+(y-28)+'" text-anchor="middle" font-family="Space Mono" font-weight="700" font-size="15" letter-spacing="1" fill="#1B2BFF">'+d[0]+'</text>';
       svg+='<text x="'+x+'" y="'+(y+38)+'" text-anchor="middle" font-family="Archivo" font-weight="800" font-size="18" fill="#0B0B0F">'+d[1]+'</text>';
       var words=d[2].split(' '),line='',ly=y+62,out=[];
       words.forEach(function(w){ if((line+w).length>24){out.push(line.trim());line=w+' ';}else line+=w+' '; });
       out.push(line.trim());
-      out.forEach(function(l){ svg+='<text x="'+x+'" y="'+ly+'" text-anchor="middle" font-family="Archivo" font-size="13" fill="#0B0B0F" opacity=".68">'+l+'</text>'; ly+=17; });
+      out.forEach(function(l){ svg+='<text x="'+x+'" y="'+ly+'" text-anchor="middle" font-family="Archivo" font-size="13" fill="#0B0B0F" opacity=".7">'+l+'</text>'; ly+=17; });
     });
     svg+='</svg>';
     rm.innerHTML=svg;
   }
 
-  /* ricavi 3Y — barre + BEP */
+  /* ricavi 3Y — barre su paper + linea BEP */
   var rc=document.getElementById('revChart');
   if(rc){
     var data=[['Y1',120,'€120k'],['Y2',628,'€628k'],['Y3',1002,'€1,0M']],max=1002,W=460,H=300,bw=84,gap=66,base=252;
     var svg='<svg viewBox="0 0 '+W+' '+H+'" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">';
-    svg+='<line x1="24" y1="'+base+'" x2="'+(W-10)+'" y2="'+base+'" stroke="#F1EEE6" stroke-opacity=".18"/>';
+    svg+='<line x1="24" y1="'+base+'" x2="'+(W-10)+'" y2="'+base+'" stroke="#0B0B0F" stroke-opacity=".22"/>';
     data.forEach(function(d,i){
       var h=d[1]/max*205, x=64+i*(bw+gap), yv=base-h;
-      svg+='<rect x="'+x+'" y="'+yv+'" width="'+bw+'" height="'+h+'" fill="'+(i===2?'#1B2BFF':'#F1EEE6')+'" fill-opacity="'+(i===2?1:.85)+'"/>';
-      svg+='<text x="'+(x+bw/2)+'" y="'+(yv-13)+'" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="19" fill="'+(i===2?'#1B2BFF':'#F1EEE6')+'">'+d[2]+'</text>';
-      svg+='<text x="'+(x+bw/2)+'" y="'+(base+26)+'" text-anchor="middle" font-family="Space Mono" font-size="13" letter-spacing="2" fill="#F1EEE6" opacity=".6">'+d[0]+'</text>';
+      svg+='<rect x="'+x+'" y="'+yv+'" width="'+bw+'" height="'+h+'" fill="'+(i===2?'#1B2BFF':'#0B0B0F')+'" fill-opacity="'+(i===2?1:.82)+'"/>';
+      svg+='<text x="'+(x+bw/2)+'" y="'+(yv-13)+'" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="19" fill="'+(i===2?'#1B2BFF':'#0B0B0F')+'">'+d[2]+'</text>';
+      svg+='<text x="'+(x+bw/2)+'" y="'+(base+26)+'" text-anchor="middle" font-family="Space Mono" font-size="13" letter-spacing="2" fill="#0B0B0F" opacity=".6">'+d[0]+'</text>';
     });
     var bx=64+(bw+gap)+bw/2;
     svg+='<line x1="'+bx+'" y1="34" x2="'+bx+'" y2="'+base+'" stroke="#1B2BFF" stroke-width="1.5" stroke-dasharray="4 4"/>';
@@ -744,14 +743,67 @@ function buildDiagrams(){
     svg+='</svg>';
     rc.innerHTML=svg;
   }
+
+  /* A2 — mix di ricavo (barre impilate) */
+  var mx=document.getElementById('mixChart');
+  if(mx){
+    var years=[['Y1',[120,0,0]],['Y2',[600,3,25]],['Y3',[900,29,73]]];
+    var cols=['#0B0B0F','rgba(27,43,255,.45)','#1B2BFF'];
+    var labs=['Sponsorship','Organic media','Digital asset'];
+    var max=1002,W=560,H=330,bw=92,gap=72,base=268;
+    var svg='<svg viewBox="0 0 '+W+' '+H+'" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">';
+    svg+='<line x1="20" y1="'+base+'" x2="'+(W-10)+'" y2="'+base+'" stroke="#0B0B0F" stroke-opacity=".22"/>';
+    years.forEach(function(yr,i){
+      var x=70+i*(bw+gap), acc=0, tot=yr[1][0]+yr[1][1]+yr[1][2];
+      yr[1].forEach(function(v,j){
+        if(v<=0)return;
+        var h=v/max*215, yv=base-(acc+v)/max*215;
+        svg+='<rect x="'+x+'" y="'+yv+'" width="'+bw+'" height="'+h+'" fill="'+cols[j]+'"/>';
+        acc+=v;
+      });
+      svg+='<text x="'+(x+bw/2)+'" y="'+(base-tot/max*215-12)+'" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="17" fill="#0B0B0F">'+(tot>=1000?'1.002':tot)+'</text>';
+      svg+='<text x="'+(x+bw/2)+'" y="'+(base+26)+'" text-anchor="middle" font-family="Space Mono" font-size="13" letter-spacing="2" fill="#0B0B0F" opacity=".6">'+yr[0]+'</text>';
+    });
+    labs.forEach(function(l,j){
+      var lx=24, ly=20+j*24;
+      svg+='<rect x="'+lx+'" y="'+(ly-10)+'" width="13" height="13" fill="'+cols[j]+'"/>';
+      svg+='<text x="'+(lx+22)+'" y="'+(ly+1)+'" font-family="Space Mono" font-size="11.5" letter-spacing="1" fill="#0B0B0F" opacity=".75">'+l.toUpperCase()+'</text>';
+    });
+    svg+='</svg>';
+    mx.innerHTML=svg;
+  }
+
+  /* A2 — EBITDA margin (curva) */
+  var mg=document.getElementById('marginChart');
+  if(mg){
+    var pts=[['Y1',0.6,'0,7'],['Y2',21.5,'135'],['Y3',36.9,'369']];
+    var W=560,H=330,base=268,top=40,maxV=40;
+    function py(v){return base-(v/maxV)*(base-top);}
+    var xs=[110,300,490];
+    var svg='<svg viewBox="0 0 '+W+' '+H+'" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">';
+    [0,10,20,30,40].forEach(function(g){
+      svg+='<line x1="60" y1="'+py(g)+'" x2="'+(W-20)+'" y2="'+py(g)+'" stroke="#0B0B0F" stroke-opacity="'+(g===0?'.22':'.08')+'"/>';
+      svg+='<text x="50" y="'+(py(g)+4)+'" text-anchor="end" font-family="Space Mono" font-size="10.5" fill="#0B0B0F" opacity=".5">'+g+'%</text>';
+    });
+    var path='M '+xs[0]+' '+py(pts[0][1])+' L '+xs[1]+' '+py(pts[1][1])+' L '+xs[2]+' '+py(pts[2][1]);
+    svg+='<path d="'+path+'" fill="none" stroke="#1B2BFF" stroke-width="2.5"/>';
+    pts.forEach(function(p,i){
+      svg+='<circle cx="'+xs[i]+'" cy="'+py(p[1])+'" r="6.5" fill="#1B2BFF"/>';
+      svg+='<text x="'+xs[i]+'" y="'+(py(p[1])-16)+'" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="17" fill="#1B2BFF">'+String(p[1]).replace('.',',')+'%</text>';
+      svg+='<text x="'+xs[i]+'" y="'+(base+26)+'" text-anchor="middle" font-family="Space Mono" font-size="13" letter-spacing="2" fill="#0B0B0F" opacity=".6">'+p[0]+'</text>';
+      svg+='<text x="'+xs[i]+'" y="'+(base+46)+'" text-anchor="middle" font-family="Space Mono" font-size="10.5" fill="#0B0B0F" opacity=".5">EBITDA €'+p[2]+'k</text>';
+    });
+    svg+='</svg>';
+    mg.innerHTML=svg;
+  }
 }
 
-/* ============ page numbers ============ */
+/* ============ page numbers (solo in stampa, via .pg) ============ */
 var slides=[].slice.call(document.querySelectorAll('.slide'));
 function pad(n){return (n<10?'0':'')+n;}
 slides.forEach(function(s,k){
   var p=s.querySelector('[data-pg]');
-  if(p) p.textContent+=' · '+pad(k+1)+' / '+pad(slides.length);
+  if(p) p.textContent=' · '+pad(k+1)+' / '+pad(slides.length);
 });
 
 /* ============ navigation ============ */
