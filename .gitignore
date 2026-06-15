@@ -1,0 +1,5 @@
+# Regenerable build intermediates (recreate with: python3 build/bundle_tool.py decode company-deck.html build/src)
+build/src/
+build/renders/
+build/skins/
+.claude/settings.local.json
